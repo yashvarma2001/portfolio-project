@@ -1,0 +1,182 @@
+/* Container & Layout */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #F2EFE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:  "Inter", sans-serif;
+}
+
+/* Moving Grid Logic */
+.moving-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    #000 40px,
+    #000 41px
+  );
+  background-size: 82px 100%;
+  animation: moveLines 5s linear infinite;
+}
+
+@keyframes moveLines {
+  from { background-position: 0 0; }
+  to { background-position: 82px 0; }
+}
+
+/* Navigation Bar */
+.hero-nav {
+  position: absolute;
+  top: 30px;
+  width: 90%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(0, 106, 113, 0.3); 
+  
+  /* This makes the "blur" effect actually visible through the transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* For Safari support */
+  
+  /* Adding a very faint light border helps define the edges on a busy background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.2em;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+/* Content & Typography */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  /* text-align: center; */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* margin-bottom: 32px; */
+  justify-content: center;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ddd;
+  overflow: hidden;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-image img {
+  width: 100%;
+  filter: grayscale(1);
+}
+
+.status-label { 
+  font-size: 16px; 
+  color: #48A6A7; 
+  margin-bottom: 2px; 
+  font-weight: 600;
+  /* text-transform: uppercase;  */
+}
+
+.status-company { 
+  font-weight: 800; 
+  font-size: 16px; 
+  margin: 0; 
+  /* color: #006A71; */
+}
+
+.dot { color: #22c55e; }
+
+.hero-title {
+  font-size: clamp(50px, 12vw, 130px);
+  line-height: 0.82;
+  /* font-weight: 900; */
+  /* text-transform: uppercase; */
+  letter-spacing: -0.06em;
+  color: #111;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Navigation Resume Button */
+.nav-resume-btn {
+  background: #000;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.nav-resume-btn:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+/* Hero Action Layout */
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-download-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-download-link:hover {
+  background: #000;
+  color: #fff;
+}
