@@ -1,0 +1,37 @@
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none; /* Crucial: clicks must pass through to elements below */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  
+  /* THE MAGIC BIT: Inverts color based on background */
+  mix-blend-mode: difference;
+}
+
+/* When hovering over a link/button */
+.cursor-hover {
+  width: 50px;
+  height: 50px;
+  background-color: #C0C9EE; /* Your accent color */
+  opacity: 0.5;
+}
+
+/* Hide the default system cursor on the whole app */
+html, body {
+  cursor: none;
+}
+
+/* Ensure mobile users still see a standard touch experience */
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none;
+  }
+  html, body {
+    cursor: auto;
+  }
+}

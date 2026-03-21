@@ -43,7 +43,7 @@ const Education = () => {
       <div className="content-container">
         <h1 className="edu-section-title">Education</h1>
         <div className="edu-container">
-          <div className="timeline-line" />
+          <div className="edu-timeline-line" />
           {educationData.map((edu, index) => (
             <EducationCard key={index} edu={edu} />
           ))}

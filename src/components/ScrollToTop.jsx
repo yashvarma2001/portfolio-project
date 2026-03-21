@@ -1,0 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import { FaArrowUp } from 'react-icons/fa6';
+import './ScrollToTop.css';
+
+const ScrollToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Show button when user scrolls down 90% of the page 
+      // (Usually when they hit the Contact section)
+      if (window.pageYOffset > window.innerHeight * 3.5) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className={`scroll-to-top ${isVisible ? 'visible' : ''}`} onClick={scrollToTop}>
+      <FaArrowUp />
+      <span className="scroll-text">Back to Top</span>
+    </div>
+  );
+};
+
+export default ScrollToTop;

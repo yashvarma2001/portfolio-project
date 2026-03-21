@@ -6,6 +6,8 @@ import { FaFileArrowDown } from 'react-icons/fa6';
 import './Hero.css';
 import profilePic from '../profile.png';
 
+import Magnetic from '../components/Magnetic';
+
 const Hero = () => {
   return (
     <div className="hero-container">
@@ -16,6 +18,7 @@ const Hero = () => {
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
           {/* Main Download in Nav */}
+
           <a 
             href={`${import.meta.env.BASE_URL}resume.pdf`} 
             download="Yashwanth_Varma_Resume.pdf" 
@@ -48,13 +51,16 @@ const Hero = () => {
 
         {/* Hero Action Button */}
         <div className="hero-actions">
-           <a 
-            href={`${import.meta.env.BASE_URL}resume.pdf`} 
-            download 
-            className="hero-download-link"
-          >
-            <FaFileArrowDown /> Download CV
-          </a>
+          <Magnetic>
+             <a 
+              href={`${import.meta.env.BASE_URL}resume.pdf`} 
+              download 
+              className="hero-download-link"
+            >
+              <FaFileArrowDown /> Download CV
+            </a>
+          </Magnetic>
+          
         </div>
       </div>
     </div>

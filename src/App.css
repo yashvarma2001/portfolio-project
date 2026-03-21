@@ -1,0 +1,26 @@
+/* 1. The Hero Wrapper */
+.hero-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  /* Optional: adds a slight slow-fade effect as you scroll */
+  overflow: hidden; 
+}
+
+/* 2. The Rest of the Site */
+.main-content {
+  position: relative;
+  z-index: 2; /* Higher than Hero */
+  /* background-color: #000; Match your theme so it's opaque */
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* Adds depth to the "edge" */
+}
+
+/* 3. Ensure sections inside main-content behave normally */
+.main-content > div, 
+.main-content > section {
+  position: relative;
+  /* background-color: inherit; */
+  min-height: 100vh;
+}
