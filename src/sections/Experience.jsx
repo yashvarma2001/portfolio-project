@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import './Experience.css';
+import cornellLogo from '../../assets/cornellLogo.png';
+import cimpressLogo from '../../assets/cimpressLogo.png';
 
 const ExperienceItem = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +58,7 @@ const Experience = () => {
       company: "Gao Labs, Cornell University", 
       duration: "Feb 2026 - Present", 
       location: "Ithaca, NY",
-      logo: "../../assets/cornellLogo.png",
+      logo: cornellLogo,
       summary: "Leading research on distributed systems architecture and high-throughput backend optimization.",
       achievements: [
         "Architecting high-availability systems focusing on fault tolerance and consensus protocols.",
@@ -69,7 +71,7 @@ const Experience = () => {
       company: "Cimpress", 
       duration: "Aug 2023 - Jan 2025", 
       location: "Remote",
-      logo: "../../assets/cimpressLogo.png",
+      logo: cimpressLogo,
       summary: "Architected high-throughput commerce APIs processing 1M+ monthly transactions.",
       achievements: [
         "Designed and implemented a custom discount-matching REST API using ASTs and GraphQL.",
@@ -83,7 +85,7 @@ const Experience = () => {
       company: "Cimpress", 
       duration: "Feb 2023 - Aug 2023", 
       location: "Remote",
-      logo: "../../assets/cimpressLogo.png",
+      logo: cimpressLogo,
       summary: "Optimized React application performance and design consistency.",
       achievements: [
         "Reduced initial bundle size by 75% (15MB to 3.5MB) by serving dynamic chunks via AWS S3.",
