@@ -109,7 +109,7 @@
 .edu-school {
   font-size: 32px;
   font-weight: 600;
-  color: #52057B; /* Purple Accent */
+  color: #818CF8; /* Purple Accent */
   margin-bottom: 15px;
 }
 
@@ -159,11 +159,6 @@
 
 .edu-item.active .mark-main {
   width: 50px;
-  background: #52057B;
+  background: #818CF8;
   box-shadow: 0 0 15px rgba(82, 5, 123, 0.3);
-}
-
-.edu-item.active .mark-sub {
-  background: #52057B;
-  opacity: 1;
 }

@@ -1,26 +1,101 @@
-/* 1. The Hero Wrapper */
+/* ==========================================================================
+   1. GLOBAL RESET & BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Helps with mobile "momentum" scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-color: #F2EFE7; /* Your Cream Base */
+  color: #1e293b; /* Your Slate Base */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden; /* Critical: Prevents side-scrolling on mobile */
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* Ensures aspect ratio is maintained */
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit; /* Ensures buttons don't revert to system fonts */
+}
+
+/* ==========================================================================
+   2. THE STICKY ARCHITECTURE (RESPONSIVE)
+   ========================================================================== */
+/* ==========================================================================
+   LAYOUT ENGINE FIX
+   ========================================================================== */
+
 .hero-sticky-wrapper {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
-  z-index: 1;
-  /* Optional: adds a slight slow-fade effect as you scroll */
-  overflow: hidden; 
+  z-index: 1; /* Hero stays behind */
+  overflow: hidden;
 }
 
-/* 2. The Rest of the Site */
 .main-content {
   position: relative;
-  z-index: 2; /* Higher than Hero */
-  /* background-color: #000; Match your theme so it's opaque */
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* Adds depth to the "edge" */
+  z-index: 10; /* Sections sit on top */
+  background-color: #F2EFE7; /* Matches your cream base */
+  width: 100%;
+  /* This shadow helps define the "break" between Hero and Content */
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.15); 
 }
 
-/* 3. Ensure sections inside main-content behave normally */
-.main-content > div, 
+/* Ensure every section has top padding so headings aren't "stuck" */
 .main-content > section {
   position: relative;
-  /* background-color: inherit; */
+  padding-top: clamp(80px, 15vh, 150px); /* Responsive top gap */
+  padding-bottom: clamp(80px, 10vh, 120px);
   min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   RESPONSIVE SPACING (IPAD & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .main-content > section {
+    padding-top: 100px; /* Uniform gap for iPads */
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content > section {
+    padding-top: 80px; /* Sufficient gap for Mobile */
+    padding-bottom: 60px;
+  }
+  
+  /* If the sticky hero feels jumpy on mobile, 
+     you can disable stickiness for phones only: */
+  /*
+  .hero-sticky-wrapper {
+    position: relative;
+    height: auto;
+  }
+  */
 }

@@ -8,7 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family:  "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+  padding: 0 5%;
 }
 
 /* Moving Grid Logic */
@@ -37,19 +38,17 @@
 /* Navigation Bar */
 .hero-nav {
   position: absolute;
-  top: 30px;
-  width: 90%;
+  top: 20px;
+  width: 92%;
+  max-width: 1200px;
   z-index: 50;
   display: flex;
   justify-content: space-between;
-  padding: 16px;
-  background: rgba(0, 106, 113, 0.3); 
-  
-  /* This makes the "blur" effect actually visible through the transparency */
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #818df861;
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* For Safari support */
-  
-  /* Adding a very faint light border helps define the edges on a busy background */
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
 }
@@ -62,12 +61,17 @@
   letter-spacing: 0.2em;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
-  margin-left: 30px;
+  margin-left: 20px;
   text-decoration: none;
   color: black;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
   transition: opacity 0.2s;
 }
@@ -76,65 +80,71 @@
 .hero-content {
   position: relative;
   z-index: 10;
-  /* text-align: center; */
+  width: 100%;
+  max-width: 1100px;
 }
 
 .profile-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  /* margin-bottom: 32px; */
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
   border-radius: 50%;
   background: #ddd;
   overflow: hidden;
   border: 2px solid white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-shrink: 0;
 }
 
 .profile-image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: grayscale(1);
 }
 
+.status-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .status-label { 
-  font-size: 16px; 
+  font-size: clamp(14px, 1.5vw, 16px); 
   color: #48A6A7; 
-  margin-bottom: 2px; 
   font-weight: 600;
-  /* text-transform: uppercase;  */
 }
 
 .status-company { 
   font-weight: 800; 
-  font-size: 16px; 
+  font-size: clamp(14px, 1.5vw, 16px); 
   margin: 0; 
-  /* color: #006A71; */
 }
 
 .dot { color: #22c55e; }
 
 .hero-title {
-  font-size: clamp(50px, 12vw, 130px);
-  line-height: 0.82;
-  /* font-weight: 900; */
-  /* text-transform: uppercase; */
+  font-size: clamp(45px, 11vw, 130px);
+  line-height: 0.85;
+  font-weight: 900;
   letter-spacing: -0.06em;
   color: #111;
   text-align: center;
+  margin: 10px 0;
 }
 
 .hero-subtitle {
-  font-size: 16px;
+  font-size: clamp(12px, 1.5vw, 16px);
   font-weight: 600;
   color: #555;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: clamp(0.1em, 0.4em, 0.4em);
   margin-top: 10px;
   text-align: center;
 }
@@ -146,18 +156,13 @@
   padding: 8px 18px;
   border-radius: 100px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   transition: transform 0.2s ease;
-}
-
-.nav-resume-btn:hover {
-  transform: scale(1.05);
-  background: #333;
 }
 
 /* Hero Action Layout */
 .hero-actions {
-  margin-top: 30px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
 }
@@ -173,10 +178,78 @@
   border-radius: 100px;
   font-weight: 700;
   text-decoration: none;
+  font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .hero-download-link:hover {
   background: #000;
   color: #fff;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --- TABLETS / IPAD --- */
+@media (max-width: 991px) {
+  .hero-nav {
+    top: 15px;
+    padding: 10px 20px;
+  }
+  
+  .nav-links a {
+    margin-left: 15px;
+    font-size: 12px;
+  }
+
+  .hero-actions {
+    margin-top: 25px;
+  }
+}
+
+/* --- MOBILE PHONES --- */
+@media (max-width: 767px) {
+  .hero-nav {
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  /* Hide regular links on mobile, only show Resume button */
+  .nav-links a:not(.nav-resume-btn) {
+    display: none;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .status-info {
+    align-items: center;
+  }
+
+  .hero-title {
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin: 15px 0;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 0.2em;
+    padding: 0 10px;
+  }
+
+  .hero-download-link {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* --- LARGE LAPTOPS --- */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: 145px;
+  }
 }
