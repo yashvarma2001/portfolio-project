@@ -31,7 +31,7 @@
   letter-spacing: -0.06em; /* The 'Aryan Yadav' tight look */
   line-height: 0.8;
   color: #000000;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   margin: 20px 0;
   display: block;
   transform: scaleX(0.96); /* Horizontal compression */
@@ -128,8 +128,8 @@
 
 /* --- THE FORM CARD (MATCHING SCREENSHOT) --- */
 .message-card-light {
-  background: #ffffff;
-  border: 1px solid #D2D2D7;
+  background: #DBE2EF;
+  /* border: 1px solid #99A799; */
   border-radius: 28px;
   padding: 40px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.04);
@@ -161,11 +161,11 @@
 .input-group-light input, 
 .input-group-light textarea {
   width: 100%;
-  background: #F5F5F7;
-  border: 1px solid #D2D2D7;
+  background: #F9F7F7;
+  border: 1px solid #112D4E;
   border-radius: 12px;
   padding: 15px;
-  color: #1D1D1F;
+  color: #112D4E;
   font-size: 15px;
   outline: none;
 }
@@ -178,19 +178,20 @@
 /* THE NEON GRADIENT BUTTON */
 .send-btn-gradient {
   width: 100%;
-  background: linear-gradient(90deg, #42D3FF 0%, #3BF2FF 50%, #29E7FF 100%);
-  color: #000000;
+  background: #3F72AF;
+  color: white;
   border: none;
   padding: 18px;
-  border-radius: 14px;
+  border-radius: 100px;
   font-size: 16px;
   font-weight: 800;
+  font-family: 'Space Mono', monospace;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  box-shadow: 0 8px 25px rgba(59, 242, 255, 0.4);
+  box-shadow: #C7EABB;
   transition: transform 0.2s ease;
 }
 
@@ -202,8 +203,15 @@
 .footer-light {
   margin-top: 100px;
   text-align: center;
-  color: #86868b;
+  color: black;
   font-size: 13px;
   border-top: 1px solid #D2D2D7;
   padding-top: 40px;
+  border-radius: 10px;
 }
+
+.contact-right{
+    font-family: 'Space Mono', monospace;
+    
+}
+

@@ -54,21 +54,12 @@ const Contact = () => {
               I'm open to new projects, part-time gigs, or a full-time adventure. 
               Just shoot me an email, I'm practically glued to it. No delays, I promise!
             </p>
-            
-            <div className="branding-image">
-              <img 
-                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZueXpueGZueXpueGZueXpueGZueXpueGZueXpueGZueXpueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o72FfM5HJydzaMpfW/giphy.gif" 
-                alt="vibe" 
-              />
-            </div>
-
-            <h1 className="name-banner-light">yashwanth varma</h1>
 
             <div className="reach-out-row">
-              <a href="mailto:yv264@cornell.edu" className="reach-out-btn-light">
+              <a href="mailto:vv256@cornell.edu" className="reach-out-btn-light">
                 Reach Out <FaArrowRight />
               </a>
-              <span className="email-display-light">yv264@cornell.edu</span>
+              <span className="email-display-light">vv256@cornell.edu</span>
             </div>
 
             <div className="social-links">
@@ -110,21 +101,22 @@ const Contact = () => {
               </div>
 
               <button 
-  type="submit" 
-  disabled={status === "SENDING" || status === "SUCCESS"}
-  className={`send-btn-gradient ${status === "SUCCESS" ? "btn-success" : ""}`}
->
-  {status === "SENDING" && "Sending..."}
-  {status === "SUCCESS" && <><FaCircleCheck /> Sent!</>} {/* Updated here too */}
-  {status === "" && <><FaPaperPlane /> Send Message</>}
-  {status === "ERROR" && "Error. Try Again?"}
-</button>
+                type="submit" 
+                disabled={status === "SENDING" || status === "SUCCESS"}
+                className={`send-btn-gradient ${status === "SUCCESS" ? "btn-success" : ""}`}
+                >
+                {status === "SENDING" && "Sending..."}
+                {status === "SUCCESS" && <><FaCircleCheck /> Sent!</>}
+                {status === "" && <><FaPaperPlane /> Send Message</>}
+                {status === "ERROR" && "Error. Try Again?"}
+                </button>
             </form>
           </div>
         </div>
       </div>
 
       <footer className="footer-light">
+        <h1 className="name-banner-light">Yashwanth Varma</h1>
         <p>Venkata Surya Yashwanth Varma Vadlamudi © 2026</p>
       </footer>
     </section>
