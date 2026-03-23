@@ -1,8 +1,42 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { 
+  SiReact, SiNodedotjs, SiGraphql, SiDocker, 
+  SiKubernetes, SiPostgresql, SiRedux, SiJavascript, SiTypescript,
+  SiGo, SiRust, SiPython, SiApachekafka, SiTerraform,
+  SiMongodb, SiGreensock
+} from 'react-icons/si';
+import { FaJava, FaServer, FaDatabase, FaMicrochip, FaNetworkWired, FaAws } from 'react-icons/fa6';
 import './Experience.css';
 import cornellLogo from '../../assets/cornellLogo.png';
 import cimpressLogo from '../../assets/cimpressLogo.png';
+
+const ICON_MAP = {
+  "React": <SiReact color="#F8FAFC" />,
+  "Node.js": <SiNodedotjs color="#F8FAFC" />,
+  "GraphQL": <SiGraphql color="#F8FAFC" />,
+  "AWS": <FaAws color="#F8FAFC" />,
+  "AWS S3": <FaAws color="#F8FAFC" />,
+  "Docker": <SiDocker color="#F8FAFC" />,
+  "Kubernetes": <SiKubernetes color="#F8FAFC" />,
+  "PostgreSQL": <SiPostgresql color="#F8FAFC" />,
+  "Redux": <SiRedux color="#F8FAFC" />,
+  "JavaScript": <SiJavascript color="#F8FAFC" />,
+  "TypeScript": <SiTypescript color="#F8FAFC" />,
+  "Java": <FaJava color="#F8FAFC" />,
+  "Go": <SiGo color="#F8FAFC" />,
+  "Rust": <SiRust color="#F8FAFC" />,
+  "Python": <SiPython color="#F8FAFC" />,
+  "Kafka": <SiApachekafka color="#F8FAFC" />,
+  "Terraform": <SiTerraform color="#F8FAFC" />,
+  "MongoDB": <SiMongodb color="#F8FAFC" />,
+  "DynamoDB": <FaDatabase color="#F8FAFC" />,
+  "Distributed Systems": <FaNetworkWired color="#818CF8" />,
+  "Paxos": <FaServer color="#818CF8" />,
+  "Raft": <FaServer color="#818CF8" />,
+  "Hash-based Sharding": <FaDatabase color="#818CF8" />,
+  "Fault Tolerance": <FaMicrochip color="#F87171" />
+};
 
 const ExperienceItem = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +44,7 @@ const ExperienceItem = ({ data }) => {
 
   return (
     <div ref={ref} className={`timeline-item ${inView ? 'active' : ''}`}>
-      {/* THE DOT: Centered on the 30px line */}
       <div className="timeline-dot" />
-      
       <div className="timeline-content">
         <div className="card-header" onClick={() => setIsOpen(!isOpen)}>
           <div className="logo-section">
@@ -26,9 +58,7 @@ const ExperienceItem = ({ data }) => {
               <span className="timeline-location">{data.location}</span>
             </div>
           </div>
-          <button className={`expand-btn ${isOpen ? 'rotated' : ''}`}>
-            ▼
-          </button>
+          <button className={`expand-btn ${isOpen ? 'rotated' : ''}`}>▼</button>
         </div>
 
         <p className="timeline-details">{data.summary}</p>
@@ -41,7 +71,9 @@ const ExperienceItem = ({ data }) => {
             </ul>
             <div className="tag-container">
               {data.tech.map((t, i) => (
-                <span key={i} className="tech-tag">{t}</span>
+                <span key={i} className="tech-tag">
+                  {ICON_MAP[t] || <FaMicrochip />} {t}
+                </span>
               ))}
             </div>
           </div>
@@ -61,10 +93,10 @@ const Experience = () => {
       logo: cornellLogo,
       summary: "Leading research on distributed systems architecture and high-throughput backend optimization.",
       achievements: [
-        "Architecting high-availability systems focusing on fault tolerance and consensus protocols.",
-        "Optimizing large-scale system performance through sharding and replication strategies."
+        "Architecting high-availability systems focusing on Paxos and Raft consensus protocols for fault tolerance.",
+        "Optimizing large-scale performance through hash-based sharding and master-slave replication strategies."
       ],
-      tech: ["Distributed Systems", "Docker", "Kubernetes", "PostgreSQL", "AWS"]
+      tech: ["Distributed Systems", "Docker", "Kubernetes", "PostgreSQL", "AWS", "Paxos", "Raft"]
     },
     { 
       title: "Software Engineer", 
@@ -78,7 +110,7 @@ const Experience = () => {
         "Optimized checkout flow performance, achieving a 25% reduction in page load time.",
         "Improved system reliability by resolving 10+ critical error patterns impacting 6,000+ monthly users."
       ],
-      tech: ["Node.js", "GraphQL", "React", "Redux", "AWS"]
+      tech: ["Node.js", "GraphQL", "React", "Redux", "AWS", "TypeScript"]
     },
     { 
       title: "Software Engineer Intern", 
@@ -86,20 +118,20 @@ const Experience = () => {
       duration: "Feb 2023 - Aug 2023", 
       location: "Remote",
       logo: cimpressLogo,
-      summary: "Optimized React application performance and design consistency.",
+      summary: "Optimized React application performance and bundle size.",
       achievements: [
-        "Reduced initial bundle size by 75% (15MB to 3.5MB) by serving dynamic chunks via AWS S3.",
-        "Developed a suite of reusable React components for a major website rebranding."
+        "Reduced initial bundle size by 75% (15MB to 3.5MB) using dynamic chunks via AWS S3.",
+        "Engineered reusable UI components to ensure design consistency across rebranded platforms."
       ],
-      tech: ["React", "AWS S3", "JavaScript", "Redux", "Lazy Loading"]
+      tech: ["React", "AWS S3", "JavaScript", "Redux"]
     }
   ];
 
   const skillGroups = [
     { category: "Languages", skills: ["Java", "Go", "Rust", "Python", "TypeScript", "SQL"] },
-    { category: "Systems", skills: ["Kafka", "GraphQL", "Distributed Systems", "Paxos", "Raft"] },
-    { category: "Infrastructure", skills: ["AWS", "Docker", "Kubernetes", "Terraform"] },
-    { category: "Databases", skills: ["PostgreSQL", "DynamoDB", "MongoDB", "React"] }
+    { category: "Distributed Systems", skills: ["Kafka", "Paxos", "Raft", "Hash-based Sharding", "Fault Tolerance"] },
+    { category: "Cloud & DevOps", skills: ["AWS", "Docker", "Kubernetes", "Terraform", "GraphQL"] },
+    { category: "Data Stores", skills: ["PostgreSQL", "DynamoDB", "MongoDB", "Redux"] }
   ];
 
   return (
@@ -120,7 +152,9 @@ const Experience = () => {
               </div>
               <div className="skills-grid">
                 {group.skills.map((skill, i) => (
-                  <span key={i} className="skill-pill">{skill}</span>
+                  <span key={i} className="skill-pill">
+                    {ICON_MAP[skill] || <FaMicrochip />} {skill}
+                  </span>
                 ))}
               </div>
             </div>

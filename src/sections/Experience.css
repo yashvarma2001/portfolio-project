@@ -1,215 +1,121 @@
-/* ==========================================================================
-   1. SECTION FOUNDATION
-   ========================================================================== */
-.experience-section {
-  position: relative;
-  background-color: #000000; /* Pure Black Theme */
-  min-height: 100vh;
-  padding: 120px 8%;
-  overflow: hidden;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
 
-/* Fixed Background SVG */
-.experience-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('../../assets/bg1.svg'); 
-  background-size: cover;
-  background-attachment: fixed; 
-  opacity: 0.2;
-  z-index: 0; 
-  pointer-events: none;
+.experience-section {
+  background-color: #0F172A; /* Deep Midnight Blue */
+  color: #F8FAFC;
+  padding: 100px 5%;
+  font-family: 'Inter', sans-serif;
 }
 
 .content-container {
-  position: relative;
-  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section-title {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: 3rem;
   font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 80px;
-  letter-spacing: -2.5px;
+  letter-spacing: -0.04em;
+  color: #818CF8;
+  margin-bottom: 60px;
+  text-transform: uppercase;
 }
 
-/* ==========================================================================
-   2. TIMELINE STEM (LINE & DOTS)
-   ========================================================================== */
+/* --- TIMELINE --- */
 .timeline-container {
   position: relative;
-  max-width: 900px; 
-  margin-left: auto; /* Aligned right per request */
-  margin-right: 2%; 
-  padding-left: 80px; 
-  margin-bottom: 120px;
+  padding-left: 40px;
 }
 
 .timeline-line {
   position: absolute;
-  left: 30px; /* Vertical anchor point */
+  left: 0;
   top: 0;
   bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 1;
+  width: 2px;
+  background: linear-gradient(to bottom, #818CF8, transparent);
 }
 
-.timeline-dot {
-  position: absolute;
-  left: -50px; /* Matches line exactly */
-  top: 42px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ffffff; 
-  border: 2px solid #000000;
-  z-index: 10;
-  transform: translateX(-50%); /* Centers 10px dot on 1px line */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.timeline-item.active .timeline-dot {
-  background: #C0C9EE; /* Accent color for Gao Labs/Cimpress */
-  border-color: #C0C9EE;
-  box-shadow: 0 0 15px rgba(192, 201, 238, 0.8);
-  transform: translateX(-50%) scale(1.4);
-}
-
-/* ==========================================================================
-   3. EXPERIENCE CARDS (GLASSMORPHISM)
-   ========================================================================== */
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
-  opacity: 0;
-  filter: blur(10px);
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-bottom: 60px;
+  opacity: 0.3;
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
 }
 
 .timeline-item.active {
   opacity: 1;
-  filter: blur(0px);
-  transform: translateY(0px);
+  transform: translateX(0);
 }
 
+.timeline-dot {
+  position: absolute;
+  left: -44px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+  background: #818CF8;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #818CF8;
+}
+
+/* --- CARD DESIGN --- */
 .timeline-content {
-  font-family: 'Space Mono', monospace;
-  position: relative;
-  padding: 25px 35px;
-  background: rgba(255, 255, 255, 0.03); 
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15); 
+  background: #1E293B; /* Slate Dark */
+  border: 1px solid rgba(129, 140, 248, 0.2);
   border-radius: 12px;
-  transition: background 0.3s ease;
-  z-index: 5;
+  padding: 25px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: #818CF8;
 }
 
 .card-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.logo-section {
-  width: 48px;
-  height: 48px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  flex-shrink: 0;
+  gap: 20px;
 }
 
 .company-logo {
-  max-width: 100%;
-  max-height: 100%;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  filter: grayscale(1) invert(0.8); /* Makes logos fit dark theme better */
+  transition: filter 0.3s ease;
 }
 
-.header-text {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* --- ICON ALIGNMENT --- */
-.meta-info span, 
-.tech-tag, 
-.skill-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
-}
-
-/* Metadata Icons (Date/Location) */
-.meta-info svg {
-  color: #64748b;
-  font-size: 14px;
-}
-
-/* Technology Pill Icons */
-.tech-tag svg, 
-.skill-pill svg {
-  color: #C0C9EE; /* Your purple-blue accent */
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-/* Skill Card Header Icons */
-.skill-icon-accent svg {
-  font-size: 22px;
-  color: #C0C9EE;
-}
-
-/* Vertical separator fix for icons */
-.timeline-date::after {
-  content: "|";
-  margin-left: 12px;
-  margin-right: 4px;
-  color: rgba(255, 255, 255, 0.1);
-}
-
-.timeline-date, 
-.timeline-location {
-  font-size: 13px;
-  color: #64748b;
-  white-space: nowrap;
-}
-
-.timeline-date::after {
-  content: "|";
-  margin-left: 12px;
-  color: rgba(255, 255, 255, 0.2);
+.timeline-content:hover .company-logo {
+  filter: grayscale(0) invert(0);
 }
 
 .timeline-role {
-  font-size: 24px;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #F8FAFC;
 }
 
 .timeline-company {
-  font-size: 20px;
+  color: #818CF8;
   font-weight: 600;
-  color: #C0C9EE;
+}
+
+.meta-info {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  margin-top: 5px;
+  display: flex;
+  gap: 15px;
 }
 
 .expand-btn {
+  margin-left: auto;
   background: none;
   border: none;
-  color: #64748b;
-  margin-left: auto;
+  color: #818CF8;
   transition: transform 0.3s ease;
 }
 
@@ -217,121 +123,84 @@
   transform: rotate(180deg);
 }
 
-/* ==========================================================================
-   4. EXPANDED INFO & TECH TAGS
-   ========================================================================== */
 .timeline-details {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #94a3b8; 
   margin-top: 15px;
+  color: #CBD5E1;
+  line-height: 1.6;
 }
 
-.achievements-title, .techs-title {
-    color: #cbd5e1;
-    margin-top: 20px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* --- EXPANDED AREA --- */
+.expanded-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .achievements-list {
-    list-style: none;
-    padding: 10px 0;
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 .achievements-list li {
-    color: #94a3b8;
-    font-size: 14px;
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #94A3B8;
 }
 
 .achievements-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #C0C9EE;
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #818CF8;
 }
 
-.tag-container {
+/* --- SKILLS & TAGS --- */
+.tag-container, .skills-grid {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag, .skill-pill {
+  display: flex;
+  align-items: center;
   gap: 8px;
-  margin-top: 10px;
-}
-
-.tech-tag {
-  padding: 4px 12px;
-  background: rgba(192, 201, 238, 0.05);
-  border: 1px solid rgba(192, 201, 238, 0.2);
-  color: #C0C9EE;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   5. TECHNICAL SKILLS GRID (BELOW)
-   ========================================================================== */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  position: relative;
-  z-index: 10;
-}
-
-.skill-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 24px;
+  padding: 6px 14px;
+  background: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: #CBD5E1;
   transition: all 0.3s ease;
 }
 
-.skill-card:hover {
-  border-color: #C0C9EE;
-  background: rgba(255, 255, 255, 0.06);
+.skill-card {
+  background: #1E293B;
+  padding: 30px;
+  border-radius: 12px;
+  border-bottom: 4px solid #818CF8;
 }
 
-.skill-category-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-  color: #C0C9EE;
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
 }
 
-/* --- ICON UNIFORMITY FIX --- */
-.pill-icon, .tag-icon {
-  width: 16px;  /* Forced Width */
-  height: 16px; /* Forced Height */
-  object-fit: contain; /* Prevents distortion */
-  display: inline-block;
-  flex-shrink: 0;
-  filter: brightness(0) invert(1); /* Forces icons to be white to match theme */
+.skill-category-title {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #818CF8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.skill-pill, .tech-tag {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-
-/* Ensure the white logo box stays clean */
-.logo-section {
-  width: 48px;
-  height: 48px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  flex-shrink: 0;
+.skill-pill:hover {
+  background: #818CF8;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(129, 140, 248, 0.2);
 }

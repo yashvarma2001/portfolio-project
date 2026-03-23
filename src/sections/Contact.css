@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
+/* --- GLOBAL LAYOUT --- */
 .contact-section-light {
   background-color: #F5F5F7;
   color: #1D1D1F;
@@ -10,135 +11,122 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
   max-width: 1300px;
   margin: 0 auto;
+  align-items: start;
 }
 
-/* --- TYPOGRAPHY (DISTORTED/TIGHT STYLE) --- */
+/* --- LEFT COLUMN STYLING --- */
 .big-title-light {
-  font-size: 80px;
+  font-size: clamp(60px, 8vw, 90px);
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
   color: #1D1D1F;
-  margin-bottom: 30px;
-}
-
-.name-banner-light {
-  font-size: clamp(60px, 9vw, 110px);
-  font-weight: 900;
-  letter-spacing: -0.06em; /* The 'Aryan Yadav' tight look */
-  line-height: 0.8;
-  color: #000000;
-  /* text-transform: lowercase; */
-  margin: 20px 0;
-  display: block;
-  transform: scaleX(0.96); /* Horizontal compression */
-  transform-origin: left;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .status-text-light {
-  font-size: 19px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
   color: #424245;
-  max-width: 480px;
-  margin-bottom: 25px;
+  max-width: 500px;
+  margin-bottom: 40px;
 }
 
-/* --- BRANDING IMAGE --- */
-.branding-image {
-  width: 160px;
-  height: 110px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 10px;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.branding-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- REACH OUT ROW --- */
 .reach-out-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin: 30px 0;
+  gap: 20px;
+  margin-bottom: 50px;
 }
 
 .reach-out-btn-light {
-  background: #000000;
+  background: #818CF8;
   color: #ffffff;
-  padding: 12px 28px;
-  border-radius: 100px;
+  padding: 14px 30px;
+  border-radius: 5px; /* Matched to coolinput */
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: transform 0.2s ease;
+  gap: 12px;
+  border: 2px solid #818CF8;
+  transition: all 0.3s ease;
+  font-family: 'Space Mono', monospace;
 }
 
 .reach-out-btn-light:hover {
-  transform: scale(1.03);
+  background: #ffffff;
+  color: #818CF8;
+  box-shadow: 6px 6px 0px #818CF8;
+  transform: translate(-3px, -3px);
 }
 
 .email-display-light {
-  font-weight: 500;
-  color: #1D1D1F;
-  font-size: 16px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #818CF8;
+  font-size: 15px;
 }
 
-/* --- SOCIAL BUTTONS --- */
+/* --- SOCIAL LINKS (LEFT) --- */
 .social-label {
   color: #86868b;
-  font-size: 14px;
-  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .social-btns-light {
   display: flex;
-  gap: 12px;
+  gap: 15px;
 }
 
 .social-btns-light a {
-  border: 1px solid #D2D2D7;
-  padding: 10px 22px;
-  border-radius: 100px;
+  border: 2px solid #818CF8;
+  padding: 10px 20px;
+  border-radius: 5px;
   color: #1D1D1F;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transition: all 0.2s ease;
+  background: transparent;
 }
 
 .social-btns-light a:hover {
-  background: #000000;
+  background: #818CF8;
   color: #ffffff;
-  border-color: #000000;
+  box-shadow: 4px 4px 0px rgba(129, 140, 248, 0.3);
 }
 
-/* --- THE FORM CARD (MATCHING SCREENSHOT) --- */
+/* --- RIGHT COLUMN: THE CARD --- */
 .message-card-light {
-  background: #DBE2EF;
-  /* border: 1px solid #99A799; */
-  border-radius: 28px;
+  background: #e8e8e8;
+  border: 2px solid #818CF8;
+  border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  box-shadow: 12px 12px 0px rgba(129, 140, 248, 0.15);
+  font-family: 'Space Mono', monospace;
 }
 
 .form-title-light {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   margin-bottom: 30px;
+  color: #818CF8;
+  text-transform: uppercase;
 }
 
 .form-row {
@@ -147,71 +135,111 @@
   gap: 20px;
 }
 
-.input-group-light {
-  margin-bottom: 20px;
-}
-
-.input-group-light label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.input-group-light input, 
-.input-group-light textarea {
+/* --- THE COOL INPUT STYLE --- */
+.coolinput {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  background: #F9F7F7;
-  border: 1px solid #112D4E;
-  border-radius: 12px;
-  padding: 15px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.coolinput label.text {
+  font-size: 0.7rem;
+  color: #818CF8;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 5px;
+  background: #e8e8e8;
+  width: fit-content;
+  z-index: 1;
+}
+
+.coolinput .input {
+  padding: 12px 10px;
+  font-size: 0.8rem;
+  border: 2px #818CF8 solid;
+  border-radius: 5px;
+  background: #e8e8e8;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
   color: #112D4E;
-  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.coolinput .input:focus {
   outline: none;
+  background: #ffffff;
+  box-shadow: 4px 4px 0px #818CF8;
 }
 
-.input-group-light input:focus, 
-.input-group-light textarea:focus {
-  border-color: #00D1FF;
-}
-
-/* THE NEON GRADIENT BUTTON */
+/* --- SEND BUTTON --- */
 .send-btn-gradient {
   width: 100%;
-  background: #3F72AF;
-  color: white;
-  border: none;
-  padding: 18px;
-  border-radius: 100px;
-  font-size: 16px;
+  background: #818CF8;
+  color: #ffffff;
+  border: 2px solid #818CF8;
+  padding: 16px;
+  border-radius: 5px;
+  font-size: 14px;
   font-weight: 800;
   font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  box-shadow: #C7EABB;
-  transition: transform 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.send-btn-gradient:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.05);
+.send-btn-gradient:hover:not(:disabled) {
+  background: #ffffff;
+  color: #818CF8;
+  box-shadow: 6px 6px 0px #818CF8;
+  transform: translate(-2px, -2px);
 }
 
+.send-btn-gradient:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- FOOTER --- */
 .footer-light {
   margin-top: 100px;
   text-align: center;
-  color: black;
-  font-size: 13px;
-  border-top: 1px solid #D2D2D7;
-  padding-top: 40px;
-  border-radius: 10px;
+  border-top: 2px solid #818CF8;
+  padding: 60px 0;
+  border-radius: 0;
 }
 
-.contact-right{
-    font-family: 'Space Mono', monospace;
-    
+.name-banner-light {
+  font-size: clamp(50px, 9vw, 110px);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: #000000;
+  line-height: 0.8;
+  margin-bottom: 10px;
+  display: block;
+  transform: scaleX(0.96);
 }
 
+.btn-success {
+  background: #4ade80 !important;
+  border-color: #4ade80 !important;
+  box-shadow: 4px 4px 0px #166534 !important;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .big-title-light {
+    font-size: 50px;
+  }
+}

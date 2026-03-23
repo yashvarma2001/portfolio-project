@@ -56,18 +56,17 @@ const Contact = () => {
             </p>
 
             <div className="reach-out-row">
-              <a href="mailto:vv256@cornell.edu" className="reach-out-btn-light">
+              <a href="mailto:yash.varma1515@gmail.com" className="reach-out-btn-light">
                 Reach Out <FaArrowRight />
               </a>
-              <span className="email-display-light">vv256@cornell.edu</span>
+              <span className="email-display-light">yash.varma1515@gmail.com</span>
             </div>
 
             <div className="social-links">
               <p className="social-label">You can also find me on —</p>
               <div className="social-btns-light">
-                <a href="https://linkedin.com/in/yashwanth-varma" target="_blank" rel="noreferrer"><FaLinkedinIn /> LinkedIn</a>
-                <a href="https://github.com/yashwanth-varma" target="_blank" rel="noreferrer"><FaGithub /> GitHub</a>
-                <a href="#" target="_blank" rel="noreferrer"><FaInstagram /> Instagram</a>
+                <a href="https://www.linkedin.com/in/vvs-yashwanth-varma/" target="_blank" rel="noreferrer"><FaLinkedinIn /> LinkedIn</a>
+                <a href="https://github.com/yashvarma2001" target="_blank" rel="noreferrer"><FaGithub /> GitHub</a>
               </div>
             </div>
           </div>
@@ -79,37 +78,37 @@ const Contact = () => {
             <h3 className="form-title-light">Send Message</h3>
             
             <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-row">
-                <div className="input-group-light">
-                  <label>Name *</label>
-                  <input type="text" name="name" placeholder="Your full name" required />
+            <div className="form-row">
+                <div className="coolinput">
+                <label className="text">Name *</label>
+                <input type="text" name="name" className="input" placeholder="Your full name" required />
                 </div>
-                <div className="input-group-light">
-                  <label>Email *</label>
-                  <input type="email" name="email" placeholder="your.email@example.com" required />
+                <div className="coolinput">
+                <label className="text">Email *</label>
+                <input type="email" name="email" className="input" placeholder="your.email@example.com" required />
                 </div>
-              </div>
+            </div>
 
-              <div className="input-group-light">
-                <label>Subject *</label>
-                <input type="text" name="subject" placeholder="Project discussion, etc." required />
-              </div>
+            <div className="coolinput">
+                <label className="text">Subject *</label>
+                <input type="text" name="subject" className="input" placeholder="Project discussion, etc." required />
+            </div>
 
-              <div className="input-group-light">
-                <label>Message *</label>
-                <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-              </div>
+            <div className="coolinput">
+                <label className="text">Message *</label>
+                <textarea name="message" className="input" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
 
-              <button 
+            <button 
                 type="submit" 
                 disabled={status === "SENDING" || status === "SUCCESS"}
                 className={`send-btn-gradient ${status === "SUCCESS" ? "btn-success" : ""}`}
-                >
+            >
                 {status === "SENDING" && "Sending..."}
                 {status === "SUCCESS" && <><FaCircleCheck /> Sent!</>}
                 {status === "" && <><FaPaperPlane /> Send Message</>}
                 {status === "ERROR" && "Error. Try Again?"}
-                </button>
+            </button>
             </form>
           </div>
         </div>
