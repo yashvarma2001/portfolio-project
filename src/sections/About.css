@@ -1,31 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
-
 .about-section {
   position: relative;
-  background-color: #000000;
-  background-image: url('../../assets/ssscribble.svg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
+  background-color: #000000; /* This stays as the solid base */
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Responsive padding: smaller on mobile, larger on desktop */
   padding: clamp(60px, 10vh, 120px) 5%; 
   overflow: hidden;
   box-sizing: border-box;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Space Mono', monospace;
 }
 
-/* Layout Wrapper */
+/* The Background Image Layer */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/ssscribble.svg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* ADJUST OPACITY HERE */
+  opacity: 0.3; 
+  
+  z-index: 0; /* Keeps it behind the content */
+  pointer-events: none;
+}
+
+/* Layout Wrapper - Ensure z-index is higher than the background */
 .about-content-wrapper {
   position: relative;
-  z-index: 10;
+  z-index: 10; 
+  /* ... rest of your existing code ... */
   display: grid;
-  /* Default: Stacked for mobile */
   grid-template-columns: 1fr; 
   max-width: 1400px;
   width: 100%;
@@ -42,7 +54,7 @@
   margin: 0;
   line-height: 0.85;
   letter-spacing: -0.05em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* Right Column Bio */
@@ -58,7 +70,7 @@
   line-height: 1.5;
   color: #FFFFFF;
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .name-highlight {
@@ -72,11 +84,7 @@
 
 .white-highlight {
   color: #FFFFFF;
-  font-weight: 600;
-}
-
-.muted-text {
-  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
 }
 
 /* Background Animation */
@@ -137,4 +145,8 @@
     /* Align "About" to center or left on small phones */
     text-align: left; 
   }
+}
+
+.secondary-bio {
+    color: #FFFFFF;
 }

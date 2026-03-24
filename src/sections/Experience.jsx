@@ -85,54 +85,57 @@ const ExperienceItem = ({ data }) => {
 
 const Experience = () => {
   const experiences = [
-    { 
-      title: "Research Fellow", 
-      company: "Gao Labs, Cornell University", 
-      duration: "Feb 2026 - Present", 
-      location: "Ithaca, NY",
-      logo: cornellLogo,
-      summary: "Leading research on distributed systems architecture and high-throughput backend optimization.",
-      achievements: [
-        "Architecting high-availability systems focusing on Paxos and Raft consensus protocols for fault tolerance.",
-        "Optimizing large-scale performance through hash-based sharding and master-slave replication strategies."
-      ],
-      tech: ["Distributed Systems", "Docker", "Kubernetes", "PostgreSQL", "AWS", "Paxos", "Raft"]
-    },
-    { 
-      title: "Software Engineer", 
-      company: "Cimpress", 
-      duration: "Aug 2023 - Jan 2025", 
-      location: "Remote",
-      logo: cimpressLogo,
-      summary: "Architected high-throughput commerce APIs processing 1M+ monthly transactions.",
-      achievements: [
-        "Designed and implemented a custom discount-matching REST API using ASTs and GraphQL.",
-        "Optimized checkout flow performance, achieving a 25% reduction in page load time.",
-        "Improved system reliability by resolving 10+ critical error patterns impacting 6,000+ monthly users."
-      ],
-      tech: ["Node.js", "GraphQL", "React", "Redux", "AWS", "TypeScript"]
-    },
-    { 
-      title: "Software Engineer Intern", 
-      company: "Cimpress", 
-      duration: "Feb 2023 - Aug 2023", 
-      location: "Remote",
-      logo: cimpressLogo,
-      summary: "Optimized React application performance and bundle size.",
-      achievements: [
-        "Reduced initial bundle size by 75% (15MB to 3.5MB) using dynamic chunks via AWS S3.",
-        "Engineered reusable UI components to ensure design consistency across rebranded platforms."
-      ],
-      tech: ["React", "AWS S3", "JavaScript", "Redux"]
-    }
-  ];
+  { 
+    title: "Software Engineer Intern", 
+    company: "Gao Labs, Cornell University", 
+    duration: "Jun 2025 - Aug 2025", 
+    location: "Ithaca, NY",
+    logo: cornellLogo,
+    summary: "Engineered an end-to-end emissions analyzer web app using React, Node.js, and PostgreSQL on AWS[cite: 18, 20].",
+    achievements: [
+      "Implemented horizontally scaled Docker architecture across EC2 instances, reducing simulation runtime by 94% (2 days to 3 hours)[cite: 21].",
+      "Managed full-stack development and AWS deployment for high-performance environmental data analysis[cite: 20, 21]."
+    ],
+    tech: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "EC2"]
+  },
+  { 
+    title: "Software Engineer", 
+    company: "Cimpress", 
+    duration: "Aug 2023 - Jan 2025", 
+    location: "Remote",
+    logo: cimpressLogo,
+    summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly transactions[cite: 22, 28].",
+    achievements: [
+      "Developed a custom discount-matching REST API using ASTs and GraphQL to process 1M+ monthly cart transactions[cite: 28].",
+      "Achieved a 25% reduction in page load time by re-architecting the cart recalculation API for better scalability[cite: 29].",
+      "Engineered responsive UI using React, Hooks, and Redux, boosting Average Order Value (AOV) by 25%[cite: 31].",
+      "Awarded High Ownership Award for technical excellence and proactive system analysis[cite: 33]."
+    ],
+    tech: ["Node.js", "GraphQL", "React", "Redux", "ASTs", "Agile"]
+  },
+  { 
+    title: "Software Engineer Intern", 
+    company: "Cimpress", 
+    duration: "Feb 2023 - Aug 2023", 
+    location: "Remote",
+    logo: cimpressLogo,
+    summary: "Optimized frontend performance and contributed to major rebranding efforts[cite: 34, 36, 37].",
+    achievements: [
+      "Reduced initial bundle size by 75% (15MB to 3.5MB) by offloading translation files to AWS S3 as dynamic chunks[cite: 36].",
+      "Developed a suite of reusable React components to ensure design consistency during a major website rebranding[cite: 37]."
+    ],
+    tech: ["React", "AWS S3", "JavaScript", "Bundle Optimization"]
+  }
+];
 
-  const skillGroups = [
-    { category: "Languages", skills: ["Java", "Go", "Rust", "Python", "TypeScript", "SQL"] },
-    { category: "Distributed Systems", skills: ["Kafka", "Paxos", "Raft", "Hash-based Sharding", "Fault Tolerance"] },
-    { category: "Cloud & DevOps", skills: ["AWS", "Docker", "Kubernetes", "Terraform", "GraphQL"] },
-    { category: "Data Stores", skills: ["PostgreSQL", "DynamoDB", "MongoDB", "Redux"] }
-  ];
+
+
+const skillGroups = [
+  { category: "Languages", skills: ["Java", "Go", "Rust", "C++", "TypeScript", "Python", "SQL"] },
+  { category: "Systems & Architecture", skills: ["Paxos", "Raft", "Fault Tolerance", "Sharding", "Kafka", "gRPC"] },
+  { category: "Cloud & DevOps", skills: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform", "CI/CD"] },
+  { category: "Databases", skills: ["PostgreSQL", "DynamoDB", "MongoDB", "Query Optimization"] }
+];
 
   return (
     <section className="experience-section">

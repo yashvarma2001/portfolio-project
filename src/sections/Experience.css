@@ -9,7 +9,7 @@
   min-height: 100vh;
   padding: 60px 5%; /* Smaller padding for mobile */
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Mono', monospace;
   color: #ffffff;
 }
 

@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "./context/ThemeContext";
 import About from "./sections/About";
+// import AcademicProjects from "./sections/HorizantalProjects"; // Import the new section
 import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
@@ -9,6 +9,8 @@ import Hero from "./sections/Hero";
 import ScrollProgress from "./components/ScrollProgress";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
+// import Publications from "./sections/Publications"; // Import Publications section
+import AcademicPortfolio from "./sections/AcademicPortfolio";
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -29,15 +31,27 @@ function App() {
       <ScrollProgress />
 
       {/* STICKY HERO SECTION */}
-      <div className="hero-sticky-wrapper">
+      <div className="hero-sticky-wrapper" style={{ opacity }}>
         <Hero />
       </div>
 
       {/* REGULAR SCROLLING CONTENT */}
       <div className="main-content">
         <About />
-        <Education />
+        
+        {/* NEW SECTION ADDED HERE */}
+        
+
+      <Education />
+
+        
         <Experience />
+        
+        <AcademicPortfolio /> 
+        
+        
+        {/* <Publication s /> */}
+        
         <Contact />
       </div>
 

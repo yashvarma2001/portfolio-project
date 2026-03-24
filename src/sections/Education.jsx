@@ -7,14 +7,21 @@ const EducationCard = ({ edu }) => {
 
   return (
     <div ref={ref} className={`edu-item ${inView ? 'active' : ''}`}>
+      {/* THE ALIGNED DOT */}
+      <div className="edu-dot" /> 
+      
       <div className="edu-content">
         <span className="edu-duration">{edu.duration}</span>
+        <h2 className="edu-school">{edu.school}</h2>
         <h3 className="edu-degree">{edu.degree}</h3>
-        <p className="edu-school">{edu.school}</p>
         <div className="edu-stats">
-            <span className="edu-location">{edu.location}</span>
+            {edu.stats.map((stat, i) => (
+              <span key={i} className="stat-tag">{stat}</span>
+            ))}
         </div>
-        <p className="edu-coursework"><strong>Relevant Coursework:</strong> {edu.coursework}</p>
+        <p className="edu-coursework">
+          <strong>Relevant Coursework:</strong> {edu.coursework}
+        </p>
       </div>
     </div>
   );
@@ -24,17 +31,17 @@ const Education = () => {
   const educationData = [
     {
       school: "Cornell University",
-      location: "Ithaca, NY",
-      duration: "Jan 2025 – Dec 2025",
       degree: "Master of Engineering in Computer Science",
+      duration: "Jan 2025 - Dec 2025",
+      stats: ["GPA: 3.63/4.3", "Ithaca, NY"],
       coursework: "Distributed Computing Principles, Database Management Systems, System Security, Machine Learning, Computer Networks, System Modelling with Generative AI."
     },
     {
       school: "Manipal University Jaipur",
-      location: "Jaipur, India",
-      duration: "July 2019 – May 2023",
       degree: "Bachelor of Technology in Computer Science and Engineering",
-      coursework: "Data Structures, Algorithms, Operating Systems, Computer Architecture, Software Engineering."
+      duration: "July 2019 - May 2023",
+      stats: ["GPA: 4.0/4.0", "Jaipur, India"],
+      coursework: "Data Structures, Algorithms, Object-Oriented Programming, Operating Systems."
     }
   ];
 
@@ -43,7 +50,9 @@ const Education = () => {
       <div className="content-container">
         <h1 className="edu-section-title">Education</h1>
         <div className="edu-container">
+          {/* THE VERTICAL TRACK */}
           <div className="edu-timeline-line" />
+          
           {educationData.map((edu, index) => (
             <EducationCard key={index} edu={edu} />
           ))}
