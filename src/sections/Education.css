@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/blocks.svg'); 
+  background-image: url('/portfolio-project/assets/blocks.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,11 +135,11 @@
 
 .stat-tag {
   font-size: 13px;
-  background: #f1f5f9;
+  /* background: #f1f5f9; */
   padding: 4px 10px;
   border-radius: 4px;
   color: #475569;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #818CF8;
 }
 
 .edu-coursework {

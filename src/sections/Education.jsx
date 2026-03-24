@@ -33,14 +33,14 @@ const Education = () => {
       school: "Cornell University",
       degree: "Master of Engineering in Computer Science",
       duration: "Jan 2025 - Dec 2025",
-      stats: ["GPA: 3.63/4.3", "Ithaca, NY"],
+      stats: ["Ithaca, NY"],
       coursework: "Distributed Computing Principles, Database Management Systems, System Security, Machine Learning, Computer Networks, System Modelling with Generative AI."
     },
     {
       school: "Manipal University Jaipur",
       degree: "Bachelor of Technology in Computer Science and Engineering",
       duration: "July 2019 - May 2023",
-      stats: ["GPA: 4.0/4.0", "Jaipur, India"],
+      stats: ["Jaipur, India"],
       coursework: "Data Structures, Algorithms, Object-Oriented Programming, Operating Systems."
     }
   ];
