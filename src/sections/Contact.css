@@ -1,245 +1,231 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
 
 /* --- GLOBAL LAYOUT --- */
-.contact-section-light {
-  background-color: #F5F5F7;
-  color: #1D1D1F;
-  padding: 100px 5%;
+.contact-section-dark {
+  background-color: #000000; /* Absolute Black */
+  color: #ffffff;
+  padding: 120px 0 0 0; /* No bottom padding so footer touches bottom */
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
+  overflow: hidden;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 80px;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 5% 100px 5%; /* Padding for the grid only */
   align-items: start;
 }
 
 /* --- LEFT COLUMN STYLING --- */
-.big-title-light {
-  font-size: clamp(60px, 8vw, 90px);
+.big-title-dark {
+  font-size: clamp(50px, 8vw, 90px);
   font-weight: 900;
   letter-spacing: -0.05em;
   line-height: 0.9;
-  color: #1D1D1F;
+  color: #ffffff;
   margin-bottom: 40px;
-  text-transform: uppercase;
 }
 
-.status-text-light {
+.status-text-dark {
   font-size: 18px;
   line-height: 1.6;
-  color: #424245;
+  color: #94a3b8;
   max-width: 500px;
   margin-bottom: 40px;
 }
 
-.reach-out-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 50px;
-}
-
-.reach-out-btn-light {
+.reach-out-btn-dark {
   background: #818CF8;
   color: #ffffff;
   padding: 14px 30px;
-  border-radius: 5px; /* Matched to coolinput */
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 800;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 2px solid #818CF8;
   transition: all 0.3s ease;
   font-family: 'Space Mono', monospace;
 }
 
-.reach-out-btn-light:hover {
+.reach-out-btn-dark:hover {
   background: #ffffff;
   color: #818CF8;
-  box-shadow: 6px 6px 0px #818CF8;
-  transform: translate(-3px, -3px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(129, 140, 248, 0.3);
 }
 
-.email-display-light {
+.email-display-dark {
   font-family: 'Space Mono', monospace;
   font-weight: 700;
   color: #818CF8;
   font-size: 15px;
 }
 
-/* --- SOCIAL LINKS (LEFT) --- */
-.social-label {
-  color: #86868b;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-
-.social-btns-light {
+/* --- SOCIAL LINKS --- */
+.social-btns-dark {
   display: flex;
   gap: 15px;
+  margin-top: 20px;
 }
 
-.social-btns-light a {
-  border: 2px solid #818CF8;
+.social-btns-dark a {
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
-  border-radius: 5px;
-  color: #1D1D1F;
+  border-radius: 8px;
+  color: #cbd5e1;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.2s ease;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
-.social-btns-light a:hover {
+.social-btns-dark a:hover {
   background: #818CF8;
-  color: #ffffff;
-  box-shadow: 4px 4px 0px rgba(129, 140, 248, 0.3);
+  color: #000000;
+  border-color: #818CF8;
 }
 
 /* --- RIGHT COLUMN: THE CARD --- */
-.message-card-light {
-  background: #e8e8e8;
-  border: 2px solid #818CF8;
-  border-radius: 12px;
+.message-card-dark {
+  background: #111111; /* Dark Grey Card */
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  border-radius: 20px;
   padding: 40px;
-  box-shadow: 12px 12px 0px rgba(129, 140, 248, 0.15);
-  font-family: 'Space Mono', monospace;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.form-title-light {
+.form-title-dark {
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 30px;
   color: #818CF8;
-  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-/* --- THE COOL INPUT STYLE --- */
+/* --- COOL INPUT DARK MODE --- */
 .coolinput {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  position: relative;
   margin-bottom: 25px;
+  position: relative;
 }
 
 .coolinput label.text {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #818CF8;
   font-weight: 700;
   position: relative;
   top: 0.5rem;
-  margin: 0 0 0 7px;
-  padding: 0 5px;
-  background: #e8e8e8;
+  margin: 0 0 0 12px;
+  padding: 0 8px;
+  background: #111111; /* Matches card background to hide border */
   width: fit-content;
   z-index: 1;
 }
 
 .coolinput .input {
-  padding: 12px 10px;
-  font-size: 0.8rem;
-  border: 2px #818CF8 solid;
-  border-radius: 5px;
-  background: #e8e8e8;
+  padding: 15px 15px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 10px;
+  background: transparent;
   width: 100%;
+  color: #ffffff;
   font-family: 'Space Mono', monospace;
-  color: #112D4E;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .coolinput .input:focus {
   outline: none;
-  background: #ffffff;
-  box-shadow: 4px 4px 0px #818CF8;
+  border-color: #818CF8;
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.2);
 }
 
-/* --- SEND BUTTON --- */
-.send-btn-gradient {
-  width: 100%;
-  background: #818CF8;
-  color: #ffffff;
-  border: 2px solid #818CF8;
-  padding: 16px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 800;
-  font-family: 'Space Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.send-btn-gradient:hover:not(:disabled) {
-  background: #ffffff;
-  color: #818CF8;
-  box-shadow: 6px 6px 0px #818CF8;
-  transform: translate(-2px, -2px);
-}
-
-.send-btn-gradient:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* --- FOOTER --- */
-.footer-light {
-  margin-top: 100px;
+/* --- FOOTER (SEMI-CIRCLE ARCH) --- */
+.footer-dark {
+  /* Using your theme's cream color for the semi-circle */
+  background-color: #F2EFE7; 
+  color: #000000;
+  padding: 120px 5% 60px 5%;
   text-align: center;
-  border-top: 2px solid #818CF8;
-  padding: 60px 0;
-  border-radius: 0;
+  
+  /* THE SEMI-CIRCLE EFFECT */
+  /* 50% 50% creates the arch, 0 0 keeps the bottom flat */
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0; 
+  
+  /* Pull it up slightly to overlap the black section if desired */
+  margin-top: 80px; 
+  width: 140%; /* Wider than screen to make the arch shallower/nicer */
+  position: relative;
+  left: -20%; /* Center the over-wide footer */
 }
 
-.name-banner-light {
-  font-size: clamp(50px, 9vw, 110px);
+.footer-content {
+  /* Bring the content back to normal width since the parent is 140% */
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.name-banner-dark {
+  font-size: clamp(40px, 10vw, 120px);
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   color: #000000;
   line-height: 0.8;
-  margin-bottom: 10px;
-  display: block;
-  transform: scaleX(0.96);
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.btn-success {
-  background: #4ade80 !important;
-  border-color: #4ade80 !important;
-  box-shadow: 4px 4px 0px #166534 !important;
+.footer-credits {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* Ensure the contact section doesn't show horizontal scroll from the wide footer */
+.contact-section-dark {
+  overflow-x: hidden;
+}
+
+.contact-gif-container {
+  width: 60%;
+  max-width: 450px; /* Limits size on desktop */
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0; /* Prevents tiny white gap at bottom of image */
+}
+
+.contact-gif {
+  width: 60%;
+  height: auto;
+  display: block;
+  filter: grayscale(20%) contrast(1.1); /* Optional: makes it feel more "techy" */
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+/* .contact-gif:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+} */
+
+/* Ensure spacing on mobile */
+@media (max-width: 768px) {
+  .contact-gif-container {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  .big-title-light {
-    font-size: 50px;
-  }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-dark { border-radius: 40px 40px 0 0; }
 }

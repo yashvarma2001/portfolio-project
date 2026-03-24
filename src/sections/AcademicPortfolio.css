@@ -56,8 +56,8 @@
 
 /* --- THE CARDS --- */
 .portfolio-card {
-  background: #000000; /* High contrast black */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* background: #000000; High contrast black */
+  border: 1px solid #818CF8;
   border-radius: 16px;
   padding: 40px;
   display: flex;
@@ -66,11 +66,11 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio-card:hover {
+/* .portfolio-card:hover {
   transform: translateY(-12px);
   border-color: #818CF8;
   box-shadow: 0 20px 40px rgba(129, 140, 248, 0.2);
-}
+} */
 
 .card-top {
   display: flex;
@@ -91,7 +91,7 @@
 }
 
 .item-icon {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-size: 22px;
   opacity: 0.8;
 }
@@ -99,7 +99,7 @@
 .item-title {
   font-size: 24px;
   font-weight: 800;
-  color: #ffffff;
+  /* color: #ffffff; */
   margin-bottom: 8px;
   line-height: 1.2;
 }
@@ -132,15 +132,15 @@
   padding: 5px 12px;
   border-radius: 6px;
   font-size: 12px;
-  color: #cbd5e1;
+  /* color: #cbd5e1; */
   border: 1px solid rgba(129, 140, 248, 0.2);
   transition: all 0.3s ease;
 }
 
-.portfolio-card:hover .item-badge {
+/* .portfolio-card:hover .item-badge {
   color: #818CF8;
   border-color: #818CF8;
-}
+} */
 
 /* --- THE CTA LINK --- */
 .item-link {
@@ -151,7 +151,7 @@
   padding: 14px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  color: #ffffff;
+  /* color: #ffffff; */
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
