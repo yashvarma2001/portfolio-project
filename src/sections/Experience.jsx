@@ -8,8 +8,6 @@ import {
 } from 'react-icons/si';
 import { FaJava, FaServer, FaDatabase, FaMicrochip, FaNetworkWired, FaAws } from 'react-icons/fa6';
 import './Experience.css';
-import cornellLogo from '../../assets/cornellLogo.png';
-import cimpressLogo from '../../assets/cimpressLogo.png';
 
 const ICON_MAP = {
   "React": <SiReact color="#F8FAFC" />,
@@ -95,7 +93,7 @@ const Experience = () => {
     company: "Gao Labs, Cornell University", 
     duration: "Jun 2025 - Aug 2025", 
     location: "Ithaca, NY",
-    logo: cornellLogo,
+    logo: `${import.meta.env.BASE_URL}assets/cornellLogo.png`,
     summary: "Engineered an end-to-end emissions analyzer web app using React, Node.js, and PostgreSQL on AWS[cite: 18, 20].",
     achievements: [
       "Implemented horizontally scaled Docker architecture across EC2 instances, reducing simulation runtime by 94% (2 days to 3 hours)[cite: 21].",
@@ -108,7 +106,7 @@ const Experience = () => {
     company: "Cimpress", 
     duration: "Aug 2023 - Jan 2025", 
     location: "Remote",
-    logo: cimpressLogo,
+    logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
     summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly transactions[cite: 22, 28].",
     achievements: [
       "Developed a custom discount-matching REST API using ASTs and GraphQL to process 1M+ monthly cart transactions[cite: 28].",
@@ -123,7 +121,7 @@ const Experience = () => {
     company: "Cimpress", 
     duration: "Feb 2023 - Aug 2023", 
     location: "Remote",
-    logo: cimpressLogo,
+    logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
     summary: "Optimized frontend performance and contributed to major rebranding efforts[cite: 34, 36, 37].",
     achievements: [
       "Reduced initial bundle size by 75% (15MB to 3.5MB) by offloading translation files to AWS S3 as dynamic chunks[cite: 36].",

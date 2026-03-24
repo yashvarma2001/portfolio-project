@@ -46,11 +46,7 @@ const Contact = () => {
               Just shoot me an email—I'm practically glued to it.
             </p>
             <div className="contact-gif-container">
-            <img 
-                src="./assets/Duck.gif" 
-                alt="Contact Animation" 
-                className="contact-gif"
-            />
+            <img src={`${import.meta.env.BASE_URL}assets/Duck.gif`} alt="Duck" />
             </div>
 
             <div className="reach-out-row">
