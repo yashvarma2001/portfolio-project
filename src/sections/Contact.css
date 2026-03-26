@@ -51,6 +51,7 @@
   gap: 12px;
   transition: all 0.3s ease;
   font-family: 'Space Mono', monospace;
+  margin-bottom: 24px;
 }
 
 .reach-out-btn-dark:hover {
@@ -145,6 +146,29 @@
   outline: none;
   border-color: #818CF8;
   box-shadow: 0 0 15px rgba(129, 140, 248, 0.2);
+}
+
+.send-btn-gradient {
+  background: #818CF8;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 24px;
+}
+
+.send-btn-gradient:hover {
+  background: #ffffff;
+  color: #818CF8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(129, 140, 248, 0.3);
 }
 
 /* --- FOOTER (SEMI-CIRCLE ARCH) --- */

@@ -88,16 +88,29 @@ const ExperienceItem = ({ data }) => {
 
 const Experience = () => {
   const experiences = [
+    { 
+    title: "Research Fellow", 
+    company: "Gao Labs, Cornell University", 
+    duration: "Feb 2026 - Present", 
+    location: "Ithaca, NY",
+    logo: `${import.meta.env.BASE_URL}assets/cornellLogo.png`,
+    summary: "Supported research and development on a city-scale mobility pattern synthesis project using LLMs and spatiotemporal prediction models.",
+    achievements: [
+     " Engineered an LLM-based inference pipeline to synthesize city-scale mobility patterns, achieving 0.97 R² against TomTom data.",
+     "Built a GATv2/LSTM spatiotemporal prediction engine with scalable data ingestion pipelines, validated (LOOCV) across 20 cities."
+    ],
+    tech: ["Python", "LLMs", "GATv2", "LSTM", "Pydeck", "Docker", "AWS"]
+  },
   { 
     title: "Software Engineer Intern", 
     company: "Gao Labs, Cornell University", 
     duration: "Jun 2025 - Aug 2025", 
     location: "Ithaca, NY",
     logo: `${import.meta.env.BASE_URL}assets/cornellLogo.png`,
-    summary: "Engineered an end-to-end emissions analyzer web app using React, Node.js, and PostgreSQL on AWS[cite: 18, 20].",
+    summary: "Engineered an end-to-end emissions analyzer web app using React, Node.js, and PostgreSQL on AWS.",
     achievements: [
-      "Implemented horizontally scaled Docker architecture across EC2 instances, reducing simulation runtime by 94% (2 days to 3 hours)[cite: 21].",
-      "Managed full-stack development and AWS deployment for high-performance environmental data analysis[cite: 20, 21]."
+      "Implemented horizontally scaled Docker architecture across EC2 instances, reducing simulation runtime by 94% (2 days to 3 hours).",
+      "Managed full-stack development and AWS deployment for high-performance environmental data analysis."
     ],
     tech: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "EC2"]
   },
@@ -107,12 +120,12 @@ const Experience = () => {
     duration: "Aug 2023 - Jan 2025", 
     location: "Remote",
     logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
-    summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly transactions[cite: 22, 28].",
+    summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly transactions.",
     achievements: [
-      "Developed a custom discount-matching REST API using ASTs and GraphQL to process 1M+ monthly cart transactions[cite: 28].",
-      "Achieved a 25% reduction in page load time by re-architecting the cart recalculation API for better scalability[cite: 29].",
-      "Engineered responsive UI using React, Hooks, and Redux, boosting Average Order Value (AOV) by 25%[cite: 31].",
-      "Awarded High Ownership Award for technical excellence and proactive system analysis[cite: 33]."
+      "Developed a custom discount-matching REST API using ASTs and GraphQL to process 1M+ monthly cart transactions.",
+      "Achieved a 25% reduction in page load time by re-architecting the cart recalculation API for better scalability.",
+      "Engineered responsive UI using React, Hooks, and Redux, boosting Average Order Value (AOV) by 25%.",
+      "Awarded High Ownership Award for technical excellence and proactive system analysis."
     ],
     tech: ["Node.js", "GraphQL", "React", "Redux", "ASTs", "Agile"]
   },
@@ -122,10 +135,10 @@ const Experience = () => {
     duration: "Feb 2023 - Aug 2023", 
     location: "Remote",
     logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
-    summary: "Optimized frontend performance and contributed to major rebranding efforts[cite: 34, 36, 37].",
+    summary: "Optimized frontend performance and contributed to major rebranding efforts.",
     achievements: [
-      "Reduced initial bundle size by 75% (15MB to 3.5MB) by offloading translation files to AWS S3 as dynamic chunks[cite: 36].",
-      "Developed a suite of reusable React components to ensure design consistency during a major website rebranding[cite: 37]."
+      "Reduced initial bundle size by 75% (15MB to 3.5MB) by offloading translation files to AWS S3 as dynamic chunks.",
+      "Developed a suite of reusable React components to ensure design consistency during a major website rebranding."
     ],
     tech: ["React", "AWS S3", "JavaScript", "Bundle Optimization"]
   }
@@ -134,10 +147,44 @@ const Experience = () => {
 
 
 const skillGroups = [
-  { category: "Languages", skills: ["Java", "Go", "Rust", "C++", "TypeScript", "Python", "SQL"] },
-  { category: "Systems & Architecture", skills: ["Paxos", "Raft", "Fault Tolerance", "Sharding", "Kafka", "gRPC"] },
-  { category: "Cloud & DevOps", skills: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform", "CI/CD"] },
-  { category: "Databases", skills: ["PostgreSQL", "DynamoDB", "MongoDB", "Query Optimization"] }
+  { 
+    category: "Languages", 
+    skills: ["Java", "Go", "Rust", "C++", "Python", "TypeScript", "JavaScript", "SQL", "C#", "Shell"]
+  },
+  { 
+    category: "Backend & Distributed Systems", 
+    skills: [
+      "Node.js", "REST", "gRPC", "GraphQL", "Consensus (Paxos, Raft)",
+      "Two-Phase Commit (2PC)",
+      "Microservices", "Kafka", "Fault Tolerance"
+    ] 
+  },
+  { 
+    category: "Frontend & Full Stack", 
+    skills: [
+      "React", "Redux", "Hooks", "TypeScript",
+      "Responsive UX Design", "State Management",
+      "3D Mapping (Pydeck)", "GeoJSON/XML"
+    ] 
+  },
+  { 
+    category: "Cloud & DevOps", 
+    skills: [
+      "AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform",
+      "Horizontal Scaling", "CI/CD", "Monitoring", "System Admin"
+    ] 
+  },
+  { 
+    category: "Databases & Data", 
+    skills: [
+      "PostgreSQL", "MySQL", "DynamoDB", "MongoDB", "Query Optimization",
+      "Spatiotemporal Data", "Time-series Ingestion", "Graph Databases"
+    ] 
+  },
+  { 
+    category: "AI & Modeling", 
+    skills: ["LLM Integration", "Agent-Based Modeling (ABM)", "GATv2", "LSTM"]
+  }
 ];
 
   return (

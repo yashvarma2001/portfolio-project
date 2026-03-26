@@ -185,7 +185,7 @@
    ========================================================================== */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   position: relative;
   z-index: 20;
@@ -237,4 +237,8 @@
   .timeline-container { padding-left: 40px; }
   .timeline-dot { left: -40px; }
   .meta-info { flex-direction: column; gap: 5px; }
+}
+
+.achievements-title{
+    margin-top: 24px;
 }
