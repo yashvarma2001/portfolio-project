@@ -1,7 +1,3 @@
-import React from 'react';
-/* FIXED: FaFileArrowDown is the correct name for FA6. 
-  Added FaCircleArrowDown as a secondary option if you prefer it.
-*/
 import { FaFileArrowDown } from 'react-icons/fa6'; 
 import './Hero.css';
 import Magnetic from '../components/Magnetic';
@@ -13,20 +9,18 @@ const Hero = () => {
         <div className="nav-logo">Yashwanth Varma</div>
         <div className="nav-links">
           <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
           <a href="#education">Education</a>
           <a href="#experience">Work</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
 
-          <a 
+          {/* <a 
             href={`${import.meta.env.BASE_URL}resume.pdf`} 
             download="Yashwanth_Varma_Resume.pdf" 
             className="nav-resume-btn"
           >
             Resume
-          </a>
+          </a> */}
         </div>
       </nav>
 
@@ -50,18 +44,16 @@ const Hero = () => {
           Software Engineer
         </p>
 
-        {/* Hero Action Button */}
         <div className="hero-actions">
           <Magnetic>
-             <a 
-              href={`${import.meta.env.BASE_URL}resume.pdf`} 
-              download 
+            <a 
+              href={`${import.meta.env.BASE_URL}Resume_YV.pdf`} 
+              download="Yashwanth_Varma_Resume.pdf"
               className="hero-download-link"
             >
-              <FaFileArrowDown /> Download CV
+              <FaFileArrowDown /> Download Resume
             </a>
           </Magnetic>
-          
         </div>
       </div>
     </div>
