@@ -15,7 +15,10 @@ const Hero = () => {
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
-          {/* Main Download in Nav */}
+          <a href="#education">Education</a>
+          <a href="#experience">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
 
           <a 
             href={`${import.meta.env.BASE_URL}resume.pdf`} 

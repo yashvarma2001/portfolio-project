@@ -1,37 +1,35 @@
 .custom-cursor {
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
+  width: 12px; /* Sharp central point */
+  height: 12px;
+  background-color: #FFD700; /* Solid Gold/Yellow center */
   border-radius: 50%;
   position: fixed;
-  pointer-events: none; /* Crucial: clicks must pass through to elements below */
+  pointer-events: none; 
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
   
-  /* THE MAGIC BIT: Inverts color based on background */
-  mix-blend-mode: difference;
+  /* OUTER CIRCLE FADE OUT EFFECT */
+  /* This creates a 12px glow that fades out softly */
+  box-shadow: 0 0 16px 8px rgba(255, 217, 0, 0.591); 
+  
+  /* Keeps the yellow consistent across all backgrounds */
+  mix-blend-mode: normal; 
+  
+  /* Very fast transition to avoid lag while moving */
+  transition: transform 0.05s linear;
 }
 
-/* When hovering over a link/button */
-.cursor-hover {
-  width: 50px;
-  height: 50px;
-  background-color: #C0C9EE; /* Your accent color */
-  opacity: 0.5;
+/* Ensure the system cursor is hidden everywhere including interactive elements */
+html, body, a, button, [role="button"], input, textarea {
+  cursor: none !important;
 }
 
-/* Hide the default system cursor on the whole app */
-html, body {
-  cursor: none;
-}
-
-/* Ensure mobile users still see a standard touch experience */
+/* Mobile check: revert to standard touch */
 @media (max-width: 1024px) {
   .custom-cursor {
     display: none;
   }
-  html, body {
-    cursor: auto;
+  html, body, a, button {
+    cursor: auto !important;
   }
 }
