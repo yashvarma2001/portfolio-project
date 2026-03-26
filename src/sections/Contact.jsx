@@ -100,7 +100,7 @@ const Contact = () => {
 
       <footer className="footer-dark">
         <div className="footer-content">
-            <h1 className="name-banner-dark">YASHWANTH VARMA</h1>
+            <h1 className="name-banner-dark">Yashwanth Varma</h1>
             <p className="footer-credits">
               Venkata Surya Yashwanth Varma Vadlamudi © 2026
             </p>
