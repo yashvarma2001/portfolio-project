@@ -5,51 +5,63 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  z-index: 100; /* Must be higher than all sections */
+  gap: 25px;
+  z-index: 9999;
+  /* Magic fix: Inverts color based on background (white on black, black on cream) */
+  mix-blend-mode: difference; 
 }
 
-.spy-dot {
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.3s ease;
+.spy-dot-wrapper {
+  display: flex;
+  align-items: center;
   text-decoration: none;
 }
 
-/* The Label that appears on hover */
-.dot-label {
-  position: absolute;
-  left: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.spy-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffffff; /* Becomes black on light backgrounds due to 'difference' */
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.spy-dot:hover .dot-label {
+.spy-dot-wrapper.active .spy-dot {
+  transform: scale(1.8);
+  background: #818CF8;
+}
+
+.dot-label {
+  position: absolute;
+  left: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #ffffff;
+  opacity: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.spy-dot-wrapper:hover .dot-label,
+.spy-dot-wrapper.active .dot-label {
   opacity: 1;
 }
 
-.spy-dot.active {
-  background: #C0C9EE; /* Your signature accent color */
-  transform: scale(1.5);
-  box-shadow: 0 0 10px rgba(192, 201, 238, 0.8);
-}
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .scroll-spy {
+    left: 15px; /* Move closer to edge on mobile */
+    gap: 20px;
+  }
 
-/* Light Theme Adjustment: Dots turn dark when over the Contact section */
-.contact-section-light .scroll-spy .spy-dot {
-  background: rgba(0, 0, 0, 0.2);
-}
-.contact-section-light .scroll-spy .spy-dot.active {
-  background: #000;
+  .dot-label {
+    display: none; /* Remove text labels for mobile to save space */
+  }
+
+  .spy-dot {
+    width: 6px;
+    height: 6px;
+  }
 }

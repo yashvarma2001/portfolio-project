@@ -4,8 +4,6 @@ import React from 'react';
 */
 import { FaFileArrowDown } from 'react-icons/fa6'; 
 import './Hero.css';
-import profilePic from '../profile.png';
-
 import Magnetic from '../components/Magnetic';
 
 const Hero = () => {
@@ -34,7 +32,7 @@ const Hero = () => {
       <div className="hero-content">
         <header className="profile-header">
           <div className="profile-image">
-             <img src={profilePic} alt="Yashwanth" />
+             <img src={`${import.meta.env.BASE_URL}assets/profile.png`} alt="Yashwanth" />
           </div>
           <div className="profile-status">
             <p className="status-label">Open to Work</p>

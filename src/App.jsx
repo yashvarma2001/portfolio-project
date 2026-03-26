@@ -30,29 +30,17 @@ function App() {
       <CustomCursor />
       <ScrollProgress />
 
-      {/* STICKY HERO SECTION */}
-      <div className="hero-sticky-wrapper" style={{ opacity }}>
+      <div id="hero" className="hero-sticky-wrapper" style={{ opacity }}>
         <Hero />
       </div>
 
-      {/* REGULAR SCROLLING CONTENT */}
       <div className="main-content">
-        <About />
-        
-        {/* NEW SECTION ADDED HERE */}
-        
+        <section id="about"><About /></section>
+        <section id="education"><Education /></section>
+        <section id="experience"><Experience /></section>
 
-      <Education />
-
-        
-        <Experience />
-        
-        <AcademicPortfolio /> 
-        
-        
-        {/* <Publication s /> */}
-        
-        <Contact />
+        <section id="projects"><AcademicPortfolio /></section>
+        <section id="contact"><Contact /></section>
       </div>
 
       <ScrollToTop />

@@ -11,16 +11,16 @@ const AcademicPortfolio = () => {
       desc: "Built a sharded store with hash-based sharding and a custom Multi-Paxos consensus engine. Integrated 2PC for atomic multi-key transactions.",
       tech: ["Java", "Multi-Paxos", "2PC"],
       icon: <FaServer />,
-      link: "https://github.com/yashvarma2001"
+      // link: "https://github.com/yashvarma2001"
     },
     {
-      type: "Security Research",
+      type: "System Security",
       title: "Secure Storage System",
       org: "Go & Cryptography",
       desc: "Engineered end-to-end encryption using RSA/AES. Implemented Argon2 hashing and DAC to manage permissions against Dolev-Yao models.",
       tech: ["Go", "RSA/AES", "Argon2"],
       icon: <FaShieldAlt />,
-      link: "https://github.com/yashvarma2001"
+      link: "https://github.com/yashvarma2001/Secure-key-value-store"
     },
     {
       type: "Publication",
@@ -29,7 +29,7 @@ const AcademicPortfolio = () => {
       desc: "Research on MR image-based detection using AlexNet and InceptionV3 deep learning models.",
       tech: ["CNN", "AlexNet", "Medical AI"],
       icon: <FaBookOpen />,
-      link: "#"
+      link: "https://ieeexplore.ieee.org/document/10924014"
     },
     {
       type: "Publication",
@@ -38,7 +38,7 @@ const AcademicPortfolio = () => {
       desc: "Analysis of Windows malware detection efficiency using CNN and AlexNet learning models.",
       tech: ["ML", "Security", "AlexNet"],
       icon: <FaBookOpen />,
-      link: "#"
+      link: "https://link.springer.com/chapter/10.1007/978-3-031-20601-6_25"
     }
   ];
 
@@ -68,10 +68,10 @@ const AcademicPortfolio = () => {
                 ))}
               </div>
 
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
+              {item.link ?<a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
                 <span>{item.type === "Publication" ? "Read Paper" : "View Source"}</span>
                 <FaExternalLinkAlt className="link-icon" />
-              </a>
+              </a> : null}
             </div>
           ))}
         </div>

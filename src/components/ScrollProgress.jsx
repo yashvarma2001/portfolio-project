@@ -3,12 +3,22 @@ import './ScrollProgress.css';
 
 const ScrollProgress = () => {
   const [activeSection, setActiveSection] = useState('hero');
-  const sections = ['hero', 'about', 'education', 'experience', 'contact'];
+  const sections = ['hero', 'about', 'education', 'experience', 'projects', 'contact'];
 
   useEffect(() => {
+    // 1. FORCED HERO RESET: When at the very top, always show Hero as active
+    const handleScrollTop = () => {
+      if (window.scrollY < 100) {
+        setActiveSection('hero');
+      }
+    };
+
+    // 2. INTERSECTION OBSERVER: For general scrolling
     const observerOptions = {
       root: null,
-      threshold: 0.5, // Trigger when 50% of the section is visible
+      // Adjusted margin to trigger when the section is near the top
+      rootMargin: '-20% 0px -60% 0px', 
+      threshold: 0,
     };
 
     const observerCallback = (entries) => {
@@ -26,21 +36,32 @@ const ScrollProgress = () => {
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    window.addEventListener('scroll', handleScrollTop);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScrollTop);
+    };
   }, []);
 
   return (
-    <div className="scroll-spy">
+    <nav className="scroll-spy">
       {sections.map((id) => (
         <a
           key={id}
           href={`#${id}`}
-          className={`spy-dot ${activeSection === id ? 'active' : ''}`}
+          className={`spy-dot-wrapper ${activeSection === id ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
         >
-          <span className="dot-label">{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+          <div className="spy-dot"></div>
+          <span className="dot-label">{id.replace('-', ' ')}</span>
         </a>
       ))}
-    </div>
+    </nav>
   );
 };
 
