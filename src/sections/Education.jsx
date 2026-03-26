@@ -7,7 +7,7 @@ const EducationCard = ({ edu }) => {
 
   return (
     <div ref={ref} className={`edu-item ${inView ? 'active' : ''}`}>
-      {/* THE ALIGNED DOT */}
+
       <div className="edu-dot" /> 
       
       <div className="edu-content">
@@ -50,7 +50,6 @@ const Education = () => {
       <div className="content-container">
         <h1 className="edu-section-title">Education</h1>
         <div className="edu-container">
-          {/* THE VERTICAL TRACK */}
           <div className="edu-timeline-line" />
           
           {educationData.map((edu, index) => (

@@ -12,7 +12,7 @@
   font-family: 'Space Mono', monospace;
 }
 
-/* The Background Image Layer */
+
 .about-section::before {
   content: "";
   position: absolute;
@@ -25,18 +25,18 @@
   background-position: center;
   background-repeat: no-repeat;
   
-  /* ADJUST OPACITY HERE */
+
   opacity: 0.3; 
   
   z-index: 0; /* Keeps it behind the content */
   pointer-events: none;
 }
 
-/* Layout Wrapper - Ensure z-index is higher than the background */
+
 .about-content-wrapper {
   position: relative;
   z-index: 10; 
-  /* ... rest of your existing code ... */
+
   display: grid;
   grid-template-columns: 1fr; 
   max-width: 1400px;
@@ -47,17 +47,16 @@
 
 /* Massive Title */
 .massive-title {
-  /* Scales from 50px to 120px based on screen width */
+
   font-size: clamp(50px, 12vw, 120px); 
   font-weight: 900;
   color: #FFFFFF;
   margin: 0;
   line-height: 0.85;
   letter-spacing: -0.05em;
-  /* text-transform: uppercase; */
 }
 
-/* Right Column Bio */
+
 .about-bio-col {
   display: flex;
   flex-direction: column;
@@ -65,7 +64,6 @@
 }
 
 .main-bio {
-  /* Fluid typography: stays readable on all screens */
   font-size: clamp(18px, 2.5vw, 28px); 
   line-height: 1.5;
   color: #FFFFFF;
@@ -93,7 +91,7 @@
   position: absolute;
   inset: 0;
   background: inherit;
-  opacity: 0.2; /* Lowered slightly for better text contrast */
+  opacity: 0.2;
   animation: scribble-drift 40s linear infinite;
   pointer-events: none;
   z-index: 1;
@@ -138,11 +136,10 @@
   }
   
   .main-bio {
-    line-height: 1.6; /* More breathing room for small screens */
+    line-height: 1.6;
   }
 
   .massive-title {
-    /* Align "About" to center or left on small phones */
     text-align: left; 
   }
 }

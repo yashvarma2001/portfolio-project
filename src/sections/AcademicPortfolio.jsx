@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaGithub, FaBookOpen, FaServer, FaShieldAlt, FaExternalLinkAlt } from 'react-icons/fa';
 import './AcademicPortfolio.css';
 
@@ -11,7 +11,6 @@ const AcademicPortfolio = () => {
       desc: "Built a sharded store with hash-based sharding and a custom Multi-Paxos consensus engine. Integrated 2PC for atomic multi-key transactions.",
       tech: ["Java", "Multi-Paxos", "2PC"],
       icon: <FaServer />,
-      // link: "https://github.com/yashvarma2001"
     },
     {
       type: "System Security",

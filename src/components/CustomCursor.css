@@ -8,8 +8,7 @@
   z-index: 9999;
   transform: translate(-50%, -50%);
   
-  /* OUTER CIRCLE FADE OUT EFFECT */
-  /* This creates a 12px glow that fades out softly */
+
   box-shadow: 0 0 16px 8px rgba(255, 217, 0, 0.591); 
   
   /* Keeps the yellow consistent across all backgrounds */

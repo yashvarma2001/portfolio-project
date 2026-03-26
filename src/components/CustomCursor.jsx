@@ -15,7 +15,6 @@ const CustomCursor = () => {
 
     window.addEventListener('mousemove', moveCursor);
 
-    // Attach listeners to all interactive elements
     const targets = document.querySelectorAll('a, button, .clickable');
     targets.forEach((target) => {
       target.addEventListener('mouseenter', handleHover);

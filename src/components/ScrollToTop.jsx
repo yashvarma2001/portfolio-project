@@ -7,8 +7,6 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button when user scrolls down 90% of the page 
-      // (Usually when they hit the Contact section)
       if (window.pageYOffset > window.innerHeight * 3.5) {
         setIsVisible(true);
       } else {

@@ -3,6 +3,26 @@ import './Hero.css';
 import Magnetic from '../components/Magnetic';
 
 const Hero = () => {
+  const handleDownload = async (e) => {
+    e.preventDefault();
+    const resumeUrl = `${import.meta.env.BASE_URL}Resume_YV.pdf`;
+    
+    try {
+      const response = await fetch(resumeUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Yashwanth_Varma_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      window.open(resumeUrl, '_blank');
+    }
+  };
+
   return (
     <div className="hero-container">
       <nav className="hero-nav">
@@ -13,14 +33,6 @@ const Hero = () => {
           <a href="#experience">Work</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-
-          {/* <a 
-            href={`${import.meta.env.BASE_URL}resume.pdf`} 
-            download="Yashwanth_Varma_Resume.pdf" 
-            className="nav-resume-btn"
-          >
-            Resume
-          </a> */}
         </div>
       </nav>
 
@@ -44,15 +56,11 @@ const Hero = () => {
           Software Engineer
         </p>
 
-        <div className="hero-actions">
-          <Magnetic>
-            <a 
-              href={`${import.meta.env.BASE_URL}Resume_YV.pdf`} 
-              download="Yashwanth_Varma_Resume.pdf"
-              className="hero-download-link"
-            >
+       <div className="hero-actions">
+          <Magnetic onClick={handleDownload}>
+            <div className="hero-download-link">
               <FaFileArrowDown /> Download Resume
-            </a>
+            </div>
           </Magnetic>
         </div>
       </div>

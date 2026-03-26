@@ -82,7 +82,7 @@
 .edu-item.active .edu-dot {
   background: #818CF8;
   border-color: #818CF8;
-  /* Keep translateX(-50%) so it stays centered while scaling */
+
   transform: translateX(-50%) scale(1.4); 
   box-shadow: 0 0 12px rgba(129, 140, 248, 0.5);
 }

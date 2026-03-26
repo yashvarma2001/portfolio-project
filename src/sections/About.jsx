@@ -6,12 +6,12 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="about-content-wrapper">
         
-        {/* Left Column: Huge Title */}
+
         <div className="about-title-col">
           <h2 className="massive-title">About</h2>
         </div>
 
-        {/* Right Column: Narrative Bio */}
+
         <div className="about-bio-col">
           <div className="bio-paragraph">
             <span className="name-highlight">Hi! I'm Yashwanth Varma.</span>

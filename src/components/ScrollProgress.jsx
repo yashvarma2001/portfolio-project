@@ -6,7 +6,7 @@ const ScrollProgress = () => {
   const sections = ['hero', 'about', 'education', 'experience', 'projects', 'contact'];
 
   useEffect(() => {
-    // 1. FORCED HERO RESET: When at the very top, always show Hero as active
+
     const handleScrollTop = () => {
       if (window.scrollY < 100) {
         setActiveSection('hero');
@@ -16,7 +16,6 @@ const ScrollProgress = () => {
     // 2. INTERSECTION OBSERVER: For general scrolling
     const observerOptions = {
       root: null,
-      // Adjusted margin to trigger when the section is near the top
       rootMargin: '-20% 0px -60% 0px', 
       threshold: 0,
     };

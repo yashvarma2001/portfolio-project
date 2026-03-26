@@ -34,7 +34,7 @@ const ICON_MAP = {
   "Raft": <FaServer color="#818CF8" />,
   "Hash-based Sharding": <FaDatabase color="#818CF8" />,
   "Fault Tolerance": <FaMicrochip color="#F87171" />,
-  // Add these to your ICON_MAP if you want the icons to show up for those tags
+  
 "EC2": <FaServer color="#F8FAFC" />,
 "ASTs": <FaMicrochip color="#F8FAFC" />,
 "Agile": <FaServer color="#F8FAFC" />,

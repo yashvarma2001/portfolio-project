@@ -1,4 +1,4 @@
-/* Container & Layout */
+
 .hero-container {
   position: relative;
   width: 100%;
@@ -12,7 +12,6 @@
   padding: 0 5%;
 }
 
-/* Moving Grid Logic */
 .moving-grid {
   position: absolute;
   inset: 0;
@@ -35,7 +34,6 @@
   to { background-position: 82px 0; }
 }
 
-/* Navigation Bar */
 .hero-nav {
   position: absolute;
   top: 20px;

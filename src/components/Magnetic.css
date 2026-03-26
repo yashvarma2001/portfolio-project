@@ -4,7 +4,6 @@
   will-change: transform;
 }
 
-/* Ensure the child (the button) doesn't have its own conflicting transitions */
 .magnetic-wrapper > * {
   pointer-events: none; /* Let the wrapper handle the math */
 }
