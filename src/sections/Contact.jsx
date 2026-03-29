@@ -41,9 +41,12 @@ const Contact = () => {
         <div className="contact-left">
           <h2 className="big-title-dark">CONTACT</h2>
           <div className="status-area">
-            <p className="status-text-dark">
-              I'm open to new projects, part-time gigs, or a full-time adventure. 
-              Just shoot me an email—I'm practically glued to it.
+           <p className="status-text-dark">
+              I'm open to new projects, career adventures, or solving complex problems. 
+              {/* Added your funny relocation line here */}
+              <span className="relocate-highlight">
+                Ready to relocate, teleport, or move across the globe—just say the word.
+              </span>
             </p>
             <div className="contact-gif-container">
             <img src={`${import.meta.env.BASE_URL}assets/Duck.gif`} alt="Duck" />

@@ -249,3 +249,12 @@
   .contact-grid { grid-template-columns: 1fr; }
   .footer-dark { border-radius: 40px 40px 0 0; }
 }
+
+.relocate-highlight {
+  display: block;
+  margin-top: 15px;
+  color: #818CF8; /* Your Indigo Accent */
+  font-weight: 700;
+  font-style: italic;
+  font-family: 'Space Mono', monospace;
+}
