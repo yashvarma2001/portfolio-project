@@ -51,7 +51,7 @@
   gap: 12px;
   transition: all 0.3s ease;
   font-family: 'Space Mono', monospace;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .reach-out-btn-dark:hover {
@@ -72,7 +72,7 @@
 .social-btns-dark {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .social-btns-dark a {
@@ -200,7 +200,7 @@
   letter-spacing: -0.05em;
   color: #000000;
   line-height: 0.8;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .footer-credits {
@@ -215,8 +215,8 @@
 }
 
 .contact-gif-container {
-  width: 60%;
-  max-width: 450px; /* Limits size on desktop */
+  width: 40%;
+  max-width: 300px; /* Limits size on desktop */
   margin-bottom: 40px;
   border-radius: 12px;
   overflow: hidden;
@@ -224,7 +224,6 @@
 }
 
 .contact-gif {
-  width: 60%;
   height: auto;
   display: block;
   filter: grayscale(20%) contrast(1.1); /* Optional: makes it feel more "techy" */
@@ -252,7 +251,7 @@
 
 .relocate-highlight {
   display: block;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #818CF8; /* Your Indigo Accent */
   font-weight: 700;
   font-style: italic;
