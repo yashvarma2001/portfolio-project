@@ -10,7 +10,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/blocks.svg'); 
+  background-image: url('/portfolio-project/assets/blocks.svg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
