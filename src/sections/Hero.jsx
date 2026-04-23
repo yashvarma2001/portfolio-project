@@ -5,7 +5,7 @@ import Magnetic from '../components/Magnetic';
 const Hero = () => {
   const handleDownload = async (e) => {
     e.preventDefault();
-    const resumeUrl = `${import.meta.env.BASE_URL}Resume_YV.pdf`;
+    const resumeUrl = `${import.meta.env.BASE_URL}Resume.pdf`;
     
     try {
       const response = await fetch(resumeUrl);
