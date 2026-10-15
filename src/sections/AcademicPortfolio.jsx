@@ -1,5 +1,5 @@
 
-import { FaGithub, FaBookOpen, FaServer, FaShieldAlt, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaBookOpen, FaServer, FaShieldAlt, FaExternalLinkAlt, FaCloud } from 'react-icons/fa';
 import './AcademicPortfolio.css';
 
 const AcademicPortfolio = () => {
@@ -8,9 +8,17 @@ const AcademicPortfolio = () => {
       type: "Distributed Systems",
       title: "Fault-Tolerant KV Store",
       org: "Java Implementation",
-      desc: "Built a sharded store with hash-based sharding and a custom Multi-Paxos consensus engine. Integrated 2PC for atomic multi-key transactions.",
+      desc: "Architected a custom Multi-Paxos sharded key-value store using hash-based sharding. Integrated two-phase commit (2PC) for atomic multi-key transactions and strict fault tolerance.",
       tech: ["Java", "Multi-Paxos", "2PC"],
       icon: <FaServer />,
+    },
+    {
+      type: "Cloud & AI",
+      title: "TDM Activity Generation Pipeline",
+      org: "AWS Bedrock, Lambda, Fargate",
+      desc: "Serverless pipeline using Bedrock batch inference to generate daily schedules for 100k+ synthetic urban personas. Moved memory generation to a 10-shard parallel Fargate architecture for a 10x speedup (63 min to 25 min).",
+      tech: ["Python", "Bedrock", "Lambda", "Fargate", "DynamoDB"],
+      icon: <FaCloud />,
     },
     {
       type: "System Security",

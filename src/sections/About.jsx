@@ -25,9 +25,10 @@ const About = () => {
           <div className="bio-paragraph">
             <p className="secondary-bio">
               My technical foundation is anchored by work in large-scale systems, 
-              including implementing a transactional <span className="white-highlight">key-value store</span> using <span className="indigo-highlight">Java</span> 
-              and a custom <span className="indigo-highlight">Paxos consensus engine</span>. 
-              Previously, as a Software Engineer at <span className="white-highlight">Cimpress</span>, I re-architected APIs to improve throughput 
+              including a fault-tolerant <span className="white-highlight">key-value store</span> in <span className="indigo-highlight">Java</span> 
+              with a custom <span className="indigo-highlight">Paxos consensus engine</span> and 2PC. Currently, as a Research Fellow at <span className="white-highlight">Cornell</span>, 
+              I build <span className="indigo-highlight">GATv2/LSTM traffic models (R² 0.98)</span> and multi-agent LLM pipelines for urban mobility. 
+              Previously, as a Software Engineer at <span className="white-highlight">Cimpress</span>, I re-architected the cart service to cut checkout latency by 25% 
               and built responsive UX components that <span className="indigo-highlight">boosted Average Order Value by 25%</span>.
             </p>
           </div>

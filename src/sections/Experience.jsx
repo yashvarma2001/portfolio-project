@@ -88,31 +88,19 @@ const ExperienceItem = ({ data }) => {
 
 const Experience = () => {
   const experiences = [
-    { 
-    title: "Research Fellow", 
-    company: "Gao Labs, Cornell University", 
-    duration: "Feb 2026 - Present", 
+    {
+    title: "Research Fellow",
+    company: "Cornell University",
+    duration: "Feb 2026 - Present",
     location: "Ithaca, NY",
     logo: `${import.meta.env.BASE_URL}assets/cornellLogo.png`,
-    summary: "Supported research and development on a city-scale mobility pattern synthesis project using LLMs and spatiotemporal prediction models.",
+    summary: "Researching city-scale urban mobility using graph neural networks and multi-agent LLM pipelines.",
     achievements: [
-     " Engineered an LLM-based inference pipeline to synthesize city-scale mobility patterns, achieving 0.97 R² against TomTom data.",
-     "Built a GATv2/LSTM spatiotemporal prediction engine with scalable data ingestion pipelines, validated (LOOCV) across 20 cities."
+     "Built a GATv2/LSTM traffic prediction engine in Python modeling road networks as dynamic spatial graphs across 20 U.S. cities; achieved R² of 0.98 with 16-city incremental training.",
+     "Engineered a multi-agent LLM pipeline using AutoGen and LiteLLM to simulate urban mobility patterns, with structured JSON validation to reduce hallucinations.",
+     "Built an end-to-end emissions analyzer using React, Node.js, and PostgreSQL on AWS; designed a FastAPI orchestrator and horizontally scaled Docker architecture across EC2 instances, reducing runtime by 94%."
     ],
-    tech: ["Python", "LLMs", "GATv2", "LSTM", "Pydeck", "Docker", "AWS"]
-  },
-  { 
-    title: "Software Engineer Intern", 
-    company: "Gao Labs, Cornell University", 
-    duration: "Jun 2025 - Aug 2025", 
-    location: "Ithaca, NY",
-    logo: `${import.meta.env.BASE_URL}assets/cornellLogo.png`,
-    summary: "Engineered an end-to-end emissions analyzer web app using React, Node.js, and PostgreSQL on AWS.",
-    achievements: [
-      "Implemented horizontally scaled Docker architecture across EC2 instances, reducing simulation runtime by 94% (2 days to 3 hours).",
-      "Managed full-stack development and AWS deployment for high-performance environmental data analysis."
-    ],
-    tech: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "EC2"]
+    tech: ["Python", "AutoGen", "LiteLLM", "GATv2", "LSTM", "FastAPI", "React", "Node.js", "PostgreSQL", "Docker", "AWS", "EC2"]
   },
   { 
     title: "Software Engineer", 
@@ -120,14 +108,15 @@ const Experience = () => {
     duration: "Aug 2023 - Jan 2025", 
     location: "Remote",
     logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
-    summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly transactions.",
+    summary: "Architected high-throughput commerce APIs and optimized checkout flows for 1M+ monthly cart transactions.",
     achievements: [
-      "Developed a custom discount-matching REST API using ASTs and GraphQL to process 1M+ monthly cart transactions.",
-      "Achieved a 25% reduction in page load time by re-architecting the cart recalculation API for better scalability.",
-      "Engineered responsive UI using React, Hooks, and Redux, boosting Average Order Value (AOV) by 25%.",
-      "Awarded High Ownership Award for technical excellence and proactive system analysis."
+      "Architected a highly scalable discount-matching REST API in Node.js using Abstract Syntax Trees and GraphQL, processing 1M+ monthly cart transactions.",
+      "Re-architected the core cart recalculation service in Node.js and TypeScript for high-throughput traffic, reducing checkout latency by 25% through asynchronous API parallelization and intelligent payload caching.",
+      "Resolved 10+ critical API errors, eliminating order blockages to improve checkout reliability for 6,000+ monthly users.",
+      "Engineered an interactive discount UX using React, Hooks, and Redux for complex state management, driving a 25% increase in average order value (AOV).",
+      "Awarded High Ownership Award for technical excellence, proactive system analysis, and clear documentation."
     ],
-    tech: ["Node.js", "GraphQL", "React", "Redux", "ASTs", "Agile"]
+    tech: ["Node.js", "TypeScript", "GraphQL", "React", "Redux", "ASTs"]
   },
   { 
     title: "Software Engineer Intern", 
@@ -137,8 +126,8 @@ const Experience = () => {
     logo: `${import.meta.env.BASE_URL}assets/cimpressLogo.png`,
     summary: "Optimized frontend performance and contributed to major rebranding efforts.",
     achievements: [
-      "Reduced initial bundle size by 75% (15MB to 3.5MB) by offloading translation files to AWS S3 as dynamic chunks.",
-      "Developed a suite of reusable React components to ensure design consistency during a major website rebranding."
+      "Optimized React performance by serving translation files as chunks via AWS S3, reducing the bundle size by 75%.",
+      "Contributed to a major website rebranding by developing a suite of reusable React components, ensuring cross-platform consistency with the updated brand identity and design system."
     ],
     tech: ["React", "AWS S3", "JavaScript", "Bundle Optimization"]
   }
@@ -147,43 +136,25 @@ const Experience = () => {
 
 
 const skillGroups = [
-  { 
-    category: "Languages", 
-    skills: ["Java", "Go", "Rust", "C++", "Python", "TypeScript", "JavaScript", "SQL", "C#", "Shell"]
+  {
+    category: "Languages",
+    skills: ["Java", "Go", "Rust", "Python", "TypeScript", "JavaScript", "C++", "C#", "SQL", "Shell"]
   },
-  { 
-    category: "Backend & Distributed Systems", 
-    skills: [
-      "Node.js", "REST", "gRPC", "GraphQL", "Consensus (Paxos, Raft)",
-      "Two-Phase Commit (2PC)",
-      "Microservices", "Kafka", "Fault Tolerance"
-    ] 
+  {
+    category: "Full-Stack & Web",
+    skills: ["React", "Redux", "HTML5/CSS3", "Node.js", "GraphQL", "REST", "API Design", "State Management"]
   },
-  { 
-    category: "Frontend & Full Stack", 
-    skills: [
-      "React", "Redux", "Hooks", "TypeScript",
-      "Responsive UX Design", "State Management",
-      "3D Mapping (Pydeck)", "GeoJSON/XML"
-    ] 
+  {
+    category: "Distributed Systems",
+    skills: ["Microservices", "gRPC", "Kafka", "Consensus (Paxos, Raft)", "Two-Phase Commit (2PC)"]
   },
-  { 
-    category: "Cloud & DevOps", 
-    skills: [
-      "AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform",
-      "Horizontal Scaling", "CI/CD", "Monitoring", "System Admin"
-    ] 
+  {
+    category: "AI & Machine Learning",
+    skills: ["Generative AI", "PyTorch", "LLM Inference Pipelines", "AI Coding (Cursor, Copilot)"]
   },
-  { 
-    category: "Databases & Data", 
-    skills: [
-      "PostgreSQL", "MySQL", "DynamoDB", "MongoDB", "Query Optimization",
-      "Spatiotemporal Data", "Time-series Ingestion", "Graph Databases"
-    ] 
-  },
-  { 
-    category: "AI & Modeling", 
-    skills: ["LLM Integration", "Agent-Based Modeling (ABM)", "GATv2", "LSTM"]
+  {
+    category: "Cloud & Databases",
+    skills: ["AWS (EKS, ECR, EC2, S3, Lambda)", "Docker", "Kubernetes", "Terraform", "CI/CD", "PostgreSQL", "MongoDB", "DynamoDB", "Redis"]
   }
 ];
 
